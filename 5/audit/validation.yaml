@@ -87,3 +87,11 @@ validation_record:
       repo_containment: "both prongs clean (scope — single repo, requirement paths resolve to up-beeblum, corpus consumed at its recorded pin by reference; home — .issues/ up-beeblum#5)"
       findings: []
       notes: "on-demand re-audit against the unchanged criteria set; every load-bearing fact independently re-verified at pin bf3750158 — Goddard attested third-person forms verbatim (uhquan, wuhkontash, wuhpit, uhpeteog/wuhpeteog, wek), lexicon unique match_keys counted at 66,863 with header row confirmed, build_lexicon.py defines match_key identity, exports contract holds the lexicon outside its six surfaces, Nisinoon schema carries Allomorph-A/Condition-A, Fermino paradigm rows (nuhkôt/kuhkôt/wuhkôt, n8sh/k8sh/8shah, nutapun) located in the tracked reference PDF, roadmap row matches scope/anchors/figures"
+  - artifact: plan
+    entries:
+      - round: 1
+        date: "2026-11-24"
+        reviewer: "fresh-context dispatch (general subagent, ses_df10f1e0dffe7whupJebwRThgd)"
+        verdict: PASS
+        findings: []
+        notes: "one-item-per-SC with no orphans; explicit cycle-free dependency order; executable instruments matching the spec's instrument column; scope confined to the spec's surfaces; Hicks-unavailable handled under spec §9 (never fabricated); no status fields; structure conforms to plan-structure-standards.md"
