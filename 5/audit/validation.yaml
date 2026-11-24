@@ -68,5 +68,13 @@ validation_record:
           remediation: "R-4 quotes the attested print now (uhpeteog, with wuhpeteog as its attestant)"
     - round: 9
       date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df18e2678ffeBQkSnvKbg3WDRL)"
+      verdict: FAIL
+      findings:
+        - class: "cross-reference sufficiency: match_keys misattributed to the exports contract"
+          classification: finding
+          remediation: "rows repointed to the lexicon dataset + its builder (the actual defining source); exports-contract row marked context-only"
+    - round: 10
+      date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent), pending"
       verdict: pending

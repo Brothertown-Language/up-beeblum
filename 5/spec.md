@@ -46,7 +46,7 @@
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
 | Fermino 2000 + Hicks 2006 | the derivation authority the data encodes | satisfied |
 | Corpus store (lexicon word-forms.tsv at the recorded pin) | the input SC-2's set-compare consumes | pending |
-| Corpus exports contract — the match_keys vocabulary + the lexicon dataset | the defining source of R-2's key identity | satisfied |
+| Corpus lexicon dataset (word-forms.tsv's match_key column + its builder tools/build_lexicon.py) | the defining source of R-2's key identity — the exports contract does not enumerate it | satisfied |
 | Goddard-1981 proofed phonology lines | the attestation set R-4/SC-4 compare against | satisfied |
 
 ## 6. Traceability
@@ -66,7 +66,8 @@
 | Fermino 2000 (Baird), Introduction to Wampanoag Grammar | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
 | Hicks 2006, A List of Initials and Finals in Wôpanâak | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
 | Goddard-1981 proofed Massachusett phonology lines | data | corpus docs/research/sources/goddard-1981-mass-phonology-lines.tsv (the corpus/ submodule at its recorded pin) | read, 2026-11-24 |
-| Corpus exports contract | project guide | corpus/AGENTS.md (the corpus/ submodule — Brothertown-Language/algonquian-library) | read, 2026-11-23 |
+| Corpus lexicon builder | data tool | corpus tools/build_lexicon.py (the corpus/ submodule at its recorded pin) | read, 2026-11-24 |
+| Corpus exports contract (for context: the lexicon sits outside its six surfaces) | project guide | corpus/AGENTS.md (the corpus/ submodule — Brothertown-Language/algonquian-library) | read, 2026-11-24 |
 | Corpus lexicon dataset (word-forms.tsv, 66,863 match_keys) | data | corpus docs/research/data/eliot-tritext/lexicon/word-forms.tsv | read + counted, 2026-11-24 |
 
 ## 8. Cost Frame
