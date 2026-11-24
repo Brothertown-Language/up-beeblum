@@ -116,7 +116,6 @@ validation_record:
       reviewer: "fresh-context verify dispatch (general subagent, ses_df40b114bffeUs11NNq5WqDkpd)"
       verdict: PASS
       notes: "all SC-1..SC-8 verified with executed evidence incl. the reviewer-run fresh-clone build (SC-1) and set-equality checks; zero findings"
-"
 
   plan:
     - round: 1
