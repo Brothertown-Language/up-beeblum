@@ -65,6 +65,9 @@
 | ROADMAP.md (up-beeblum#3) | roadmap | repository root | read, 2026-11-24 |
 | Fermino 2000 (Baird), Introduction to Wampanoag Grammar | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
 | Hicks 2006, A List of Initials and Finals in Wôpanâak | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
+| Goddard-1981 proofed Massachusett phonology lines | data | corpus docs/research/sources/goddard-1981-mass-phonology-lines.tsv (the corpus/ submodule at its recorded pin) | read, 2026-11-24 |
+| Corpus exports contract | project guide | corpus/AGENTS.md (the corpus/ submodule — Brothertown-Language/algonquian-library) | read, 2026-11-23 |
+| Corpus lexicon dataset (word-forms.tsv, 66,863 match_keys) | data | corpus docs/research/data/eliot-tritext/lexicon/word-forms.tsv | read + counted, 2026-11-24 |
 
 ## 8. Cost Frame
 

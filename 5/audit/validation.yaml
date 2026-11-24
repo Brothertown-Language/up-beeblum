@@ -52,5 +52,13 @@ validation_record:
           remediation: "Godward anchor carried as R-4/SC-4 (Goddard-attested third-person forms verify the conditioning table); §7 contract+lexicon+Goddard rows added; recomposition entry removed from body"
     - round: 7
       date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df19f7c9bffefxTpXab9g3hJ1s)"
+      verdict: FAIL
+      findings:
+        - class: "DC-9 §7: three load-bearing sources unrowed (Goddard lines, exports contract, lexicon dataset)"
+          classification: finding
+          remediation: "the three §7 rows added with dated verification"
+    - round: 8
+      date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent), pending"
       verdict: pending
