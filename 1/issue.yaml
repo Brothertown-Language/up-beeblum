@@ -1,7 +1,9 @@
 title: '[SPEC] Repository initial contents — scaffold (PR 1)'
-status: open
+status: closed
 labels: []
 body: ''
 created_at: '2026-11-24T04:52:57+00:00'
-updated_at: '2026-11-24T04:53:33+00:00'
+updated_at: '2026-11-24T13:57:31+00:00'
 github_url: https://github.com/Brothertown-Language/up-beeblum/issues/1
+closed_at: '2026-11-24T13:57:31+00:00'
+close_reason: completed
