@@ -1,0 +1,72 @@
+validation_record:
+  artifact: spec
+  entries:
+    - round: 1
+      date: "2026-11-24"
+      reviewer: fresh-context dispatch (general subagent, ses_df418630effe2AXnzRBtuh0V44)
+      verdict: FAIL
+      repo_containment: "scope and home containment clean — one repository"
+      findings:
+        - class: "DC-5 incapable instrument / traceability family"
+          classification: finding
+          ground: "R-1 bundled the package-existence clause with the pyproject config clause; SC-5's instrument verified only the latter"
+          remediation: "R-1 split: package requirement (R-1) vs toolchain requirement (R-2); new path-existence SC-6 added for src/up_beeblum/__init__.py"
+        - class: "DC-4 ambiguous criterion"
+          classification: finding
+          ground: "ignore set named a category ('build/LaTeX output artifacts'), not a pattern set; SC-4's grep undecidable"
+          remediation: "R-5 now enumerates the fixed pattern set (.opencode/, private/, tmp/, outputs/, *.aux *.log *.out *.toc); SC-4 instrument names grep -F per pattern"
+        - class: "DC-4 ambiguous criterion (minor)"
+          classification: finding
+          ground: "R-3's column directories had no determinate names for SC-2's enumeration"
+          remediation: "R-4 states the layout rule data/editions/<edition>/<BOOK>/<column>.tsv with column codes wlp/orig/frame/web; SC-2 enumerates the four skeleton paths"
+    - round: 2
+      date: "2026-11-24"
+      reviewer: fresh-context dispatch (general subagent, ses_df4179d63ffemaq1cuyVoCEPyA)
+      verdict: FAIL
+      repo_containment: "both prongs clean"
+      findings:
+        - class: "DC-5 incapable instrument"
+          classification: finding
+          ground: "SC-4 said 'exactly this exclusion set' but grep-presence could not detect extra patterns"
+          remediation: "instrument is now a full line-set equality parse (non-blank, non-comment lines == the R-5 set)"
+        - class: "internal contradiction"
+          classification: finding
+          ground: "edge case 2 claimed the property held in the materialized state, contradicting SC-1's absence assertion"
+          remediation: "edge case 2 rewritten: the absent state is the verification target; materialized state reports deviation with a deinit-and-rerun resolution"
+        - class: "DC-9 layout non-conformance"
+          classification: finding
+          ground: "Cost Frame carried no per-SC entry for SC-6 (added in round 1)"
+          remediation: "§8 extended: SC-6 grouped with the path/config-read entries"
+        - class: "decomposition (criteria-set level)"
+          classification: finding
+          ground: "SC-4 bundled R-5 (ignore set) and R-6 (private/ manifest)"
+          remediation: "split: SC-4 = ignore set (R-5); new SC-7 = private/ manifest + check-ignore (R-6); traceability updated both directions"
+    - round: 3
+      date: "2026-11-24"
+      reviewer: fresh-context dispatch (general subagent, ses_df416ffc3ffe0eNwtuC1gxRiZa)
+      verdict: FAIL
+      repo_containment: "clean"
+      findings:
+        - class: "gap analysis"
+          classification: finding
+          ground: "no requirement established the smoke suite's existence; a scaffold with no test/ would fail SC-1 while conforming to R-1..R-6"
+          remediation: "R-7 added (pytest-collectable suite under test/); SC-8 added (collect-only count >= 1)"
+        - class: "DC-5 incapable instrument"
+          classification: finding
+          ground: "SC-5 asserted section presence only — weaker than R-2's command-table consistency claim"
+          remediation: "R-2 states the concrete values; SC-5 asserts exactly those values (testpaths, [tool.ruff], pyright include)"
+        - class: "cross-reference sufficiency / traceability"
+          classification: finding
+          ground: "SC-1 mapped to R-4, which its instrument does not test"
+          remediation: "traceability corrected: SC-1 -> R-2/R-3/R-7; both-direction rows updated"
+    - round: 4
+      date: "2026-11-24"
+      reviewer: fresh-context dispatch (general subagent, ses_df4163a26ffeLwF8SKCL09Lh5N)
+      verdict: PASS
+      notes: "zero findings; repo-boundary containment both prongs clean; feasibility spot-checked live (referenced repos, AGENTS.md, .gitignore all exist)"
+  plan:
+    - round: 1
+      date: "2026-11-24"
+      reviewer: fresh-context dispatch (general subagent, ses_df4151f2cffew8NJHoDjVLYLiD)
+      verdict: PASS
+      notes: "zero findings; coverage, ordering, instruments, scope, atomicity, structure all clean"

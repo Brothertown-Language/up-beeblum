@@ -39,22 +39,26 @@
 
 ## 3. Requirements
 
-- **R-1:** The repository SHALL carry a Python package `up_beeblum` under `src/` with a uv-managed toolchain — `pyproject.toml` carrying pytest, ruff, and pyright configuration consistent with the family AGENTS.md command table (`uv run pytest test/`, `uvx ruff check src/ test/`, `uvx pyright src/`).
-- **R-2:** The repository SHALL declare reference-only submodules `algonquian-library` and `snea-lib` in `.gitmodules` at their canonical paths (`corpus/`, `snea-lib/`) with canonical GitHub origins (`Brothertown-Language/algonquian-library`, `Brothertown-Language/snea-lib`).
-- **R-3:** The repository SHALL carry the committed-data skeleton: `data/editions/{1663-first,1685-second}/` per-edition text-copy directories for the four columns (modern WLRP, original orthography, English frame, WEB), plus `data/derivations/` (per-form derivation data) and `data/manifests/` (build manifests), each present in the tree.
-- **R-4:** The smoke test suite SHALL pass with neither submodule materialized: `uv sync && uv run pytest test/` exits 0 from a fresh clone.
-- **R-5:** `.gitignore` SHALL exclude `private/`, `tmp/`, and build/LaTeX output artifacts.
+- **R-1:** The repository SHALL carry the package directory `src/up_beeblum/` containing at least a module entry point (`__init__.py`).
+- **R-2:** The toolchain SHALL be uv-managed: `pyproject.toml` carrying exactly `[tool.pytest.ini_options]` with `testpaths = ["test"]`, a `[tool.ruff]` section targeting the `src/` and `test/` trees, and a `[tool.pyright]` section with `include = ["src"]` — matching the family AGENTS.md command table (`uv run pytest test/`, `uvx ruff check src/ test/`, `uvx pyright src/`).
+- **R-3:** The repository SHALL declare reference-only submodules `algonquian-library` and `snea-lib` in `.gitmodules` at their canonical paths (`corpus/`, `snea-lib/`) with canonical GitHub origins (`Brothertown-Language/algonquian-library`, `Brothertown-Language/snea-lib`).
+- **R-4:** The repository SHALL carry the committed-data skeleton: the edition directories `data/editions/1663-first/` and `data/editions/1685-second/`, plus `data/derivations/` and `data/manifests/`; per-book text copies land under the stated layout rule `data/editions/<edition>/<BOOK>/<column>.tsv` — column codes `wlp` (modern WLRP), `orig` (original orthography), `frame` (the edition's English frame), `web` — with no book data in the scaffold (books land via roadmap work).
+- **R-5:** `.gitignore` SHALL carry exactly this exclusion set: `.issues/`, `.opencode/`, `private/`, `tmp/`, `outputs/`, and the LaTeX byproduct extensions `*.aux`, `*.log`, `*.out`, `*.toc`.
 - **R-6:** `private/` SHALL carry its `.gitignore` and a README manifest consistent with the family placement rules (in-copyright material untracked by design; an acquisition-route inventory of record).
+- **R-7:** The repository SHALL carry a smoke test suite under `test/` containing at least one pytest-collectable test, so the SC-1 run exercises a real suite rather than an empty target.
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
 | SC-1 | Fresh-clone smoke green: `uv sync && uv run pytest test/` exits 0 with neither submodule materialized | behavioral | clone to a temp dir; assert both submodule paths absent; run both commands; assert exit 0 |
-| SC-2 | Layout skeleton matches R-3 (every named directory exists in the tree) | structural | path-existence check enumerating the R-3 paths |
-| SC-3 | `.gitmodules` lists exactly the two reference submodules with canonical URLs and paths | structural | `git config --file .gitmodules --list` output compared against the R-2 values |
-| SC-4 | Ignore policy excludes `private/`, `tmp/`, build/LaTeX outputs; `private/` contains `.gitignore` + README manifest | structural | grep `.gitignore` for the exclusion set; path-existence check in `private/` |
-| SC-5 | `pyproject.toml` carries the pytest, ruff, and pyright configuration sections | structural | read `pyproject.toml`; assert the three sections exist |
+| SC-2 | Layout skeleton matches R-4: the two edition directories, `data/derivations/`, and `data/manifests/` exist | structural | path-existence check enumerating those four paths |
+| SC-3 | `.gitmodules` lists exactly the two reference submodules with canonical URLs and paths | structural | `git config --file .gitmodules --list` output compared against the R-3 values |
+| SC-4 | `.gitignore`'s effective patterns (non-blank, non-comment lines) equal the R-5 set, with nothing added | structural | parse `.gitignore` lines minus blank/comment lines; compare the resulting set for equality against the R-5 enumeration |
+| SC-5 | `pyproject.toml` carries the R-2 sections with the R-2 stated values (`testpaths = ["test"]`, `[tool.ruff]`, pyright `include = ["src"]`) | structural | read `pyproject.toml`; assert those three concrete values |
+| SC-6 | `src/up_beeblum/` exists and contains an `__init__.py` | structural | path-existence check for `src/up_beeblum/__init__.py` |
+| SC-7 | `private/` contains a `.gitignore` and a README manifest; neither is tracked by the parent repository | structural | path-existence of `private/.gitignore` + `private/README.md`; `git check-ignore private/` confirms exclusion |
+| SC-8 | The smoke suite is collectable: pytest reports at least one collected test from `test/` | structural | `uv run pytest test/ --collect-only -q` reports a test count ≥ 1, exit 0 |
 
 ## 5. Dependencies
 
@@ -69,14 +73,15 @@
 
 | Requirement | Success criteria |
 |-------------|------------------|
-| R-1 | SC-5 |
-| R-2 | SC-3 |
-| R-3 | SC-2 |
-| R-4 | SC-1 |
+| R-1 | SC-6 |
+| R-2 | SC-5, SC-1 |
+| R-3 | SC-3, SC-1 |
+| R-4 | SC-2 |
 | R-5 | SC-4 |
-| R-6 | SC-4 |
+| R-6 | SC-7 |
+| R-7 | SC-8, SC-1 |
 
-Every SC traces (SC-1→R-4, SC-2→R-3, SC-3→R-2, SC-4→R-5/R-6, SC-5→R-1); no orphans in either direction.
+Every SC traces (SC-1→R-2/R-3/R-7, SC-2→R-4, SC-3→R-3, SC-4→R-5, SC-5→R-2, SC-6→R-1, SC-7→R-6, SC-8→R-7); no orphans in either direction.
 
 ## 7. Documentation Sources
 
@@ -92,12 +97,15 @@ Every SC traces (SC-1→R-4, SC-2→R-3, SC-3→R-2, SC-4→R-5/R-6, SC-5→R-1)
 ## 8. Cost Frame
 
 - **SC-1:** acting costs one temp-dir clone + `uv sync` (seconds-to-minutes, network to origin once); skipping costs the self-containment claim being asserted rather than proven — a scaffold that builds only in this dev checkout is the bitrot the property guards against.
-- **SC-2..SC-5:** path/list checks cost seconds; skipping costs the structure drifting from the design record silently.
+- **SC-2, SC-3, SC-5, SC-6:** path/config reads cost seconds; skipping costs the structure drifting from the design record silently.
+- **SC-4:** one line-set parse of `.gitignore` costs seconds; skipping costs a silent ignore-policy drift (the exact-set equality is what notices an added or dropped pattern).
+- **SC-7:** two path checks + one `git check-ignore` call cost seconds; skipping costs the placement policy holding by convention rather than by check (in-copyright content silently tracked is the state this excludes).
+- **SC-8:** one pytest collect costs seconds; skipping costs the smoke run exercising an empty target, which would still satisfy SC-1's exit-0 condition vacuously.
 
 ## 9. Edge Cases
 
-- **Fresh clone without submodule materialization** — Condition: clone with submodules absent (the `.gitmodules`-declared paths hold no content). Expected behavior: `uv sync && pytest green`; Resolution: SC-1's instrument asserts the absence before running, which is the property's proof.
-- **Submodule accidentally materialized** — Condition: a consumer runs `git submodule update --init` before the test. Expected behavior: the suite stays green (self-containment means the build does not depend on either); the absence assertion in SC-1's instrument reports the environment deviation rather than failing the smoke result. Resolution: recorded; the criterion's property holds under both states.
+- **Fresh clone without submodule materialization** — Condition: clone with submodules absent (the `.gitmodules`-declared paths hold no content). Expected behavior: `uv sync && pytest green`. Resolution: SC-1's instrument asserts the absence before running, which is the property's proof.
+- **Submodule accidentally materialized** — Condition: a consumer runs `git submodule update --init` before the run. Expected behavior: SC-1's absence preconditions report the environment deviation (both paths present), and the criterion's verification is the absent-state run; the smoke suite itself imports neither submodule. Resolution: the materialized state is not a verification target of this spec — de-materialize (`git submodule deinit --all --force` per the branch card's remediation path) and re-run; the deviation is recorded, not a permanent failure.
 - **Empty-repo branch state** — Condition: the repository's trunk (created 2026-11-23, contains only the bootstrap commit). Expected behavior: the scaffold lands on a feature branch and PR-1; the store's `issues-data` branch never enters the main history.
 
 ## 10. Completion gate
