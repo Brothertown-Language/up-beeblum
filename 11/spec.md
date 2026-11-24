@@ -18,13 +18,13 @@
 
 ## 2. Not Included
 
-- The build pipeline's other stages — this item defines the manifest interface; the consumers' behavior is their own deliverables.
+- The build CLI's remaining behavior — the consumption contract is R-2's deliverable; everything else about the CLI is up-beeblum#8's deliverable.
 - Corpus content — the manifest is generated from the contract at pin time, never hand-maintained.
 
 ## 3. Requirements
 
 - **R-1:** The manifest SHALL enumerate every book/edition the corpus spine carries, with row + flag counts, and record the source-pin SHA it was generated from.
-- **R-2:** The build SHALL consume the manifest; uncovered books SHALL appear as named gaps, never silently absent.
+- **R-2:** The build CLI (roadmap item 5, up-beeblum#8) SHALL consume the manifest; uncovered books SHALL appear as named gaps, never silently absent.
 - **R-3:** Manifest regeneration SHALL be part of the pin-bump flow — running the pin-bump procedure SHALL regenerate the manifest.
 - **R-4:** An enumerated-unknown book (a manifest state the corpus spine does not carry) SHALL fail the enumeration loudly with a named enumeration error, per the item's stated design.
 - **R-5:** A manifest mismatching the spine at build time SHALL fail the build with a named staleness error.
@@ -34,7 +34,7 @@
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
 | SC-1 | Manifest matches the spine's actual rows | structural | regenerate; compare per-book counts vs the alignment store (R-1) |
-| SC-2 | Build targets + gap notes follow the manifest | structural | run build; assert target set + gap notes agree with the manifest (R-2) |
+| SC-2 | The build CLI's targets + gap notes follow the manifest | structural | run the build CLI; assert target set + gap notes agree with the manifest (R-2) |
 | SC-3 | Pin-bump regenerates the manifest | structural | run the pin-bump flow; assert the manifest's source-pin SHA field changes to the new pin's SHA (R-1, R-3) |
 | SC-4 | Stale manifest fails the build with the named staleness error | structural | flip a count in a staged manifest; assert the R-5 named staleness failure (R-5) |
 | SC-5 | Enumerated-unknown book fails loudly | structural | feed a manifest row naming an absent book; assert the named enumeration failure (R-4) |
@@ -47,12 +47,13 @@
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
 | Roadmap item 1's regeneration tool | the pin-bump flow this integrates with | pending |
 | Corpus spine (alignment store at the recorded pin) | the data SC-1's enumeration compares against | pending |
+| Up-beeblum#8 (build CLI) | the consuming surface R-2 mandates | pending |
 
 ## 6. Traceability
 
 | Requirement | Success criteria |
 |-------------|------------------|
-| R-1 | SC-1 |
+| R-1 | SC-1, SC-3 |
 | R-2 | SC-2 |
 | R-3 | SC-3 |
 | R-4 | SC-5 |
@@ -73,7 +74,6 @@ Each instrument costs a read or run at implementation time (minutes); skipping r
 ## 9. Edge Cases
 
 - **Upstream data maturity** — the corpus surface this item consumes may be incomplete per book/edition; the coverage-driven model builds what exists and flags the rest, never fabricates; manifests record flags.
-- **Recomposition** — if validation or implementation shows the item over-fat for one PR, the recomposition protocol splits it; this spec becomes the umbrella (recorded at that time).
 
 ## 10. Completion gate
 

@@ -69,7 +69,6 @@ Each instrument costs a read or run at implementation time (minutes); skipping r
 ## 9. Edge Cases
 
 - **Upstream data maturity** — the corpus surface this item consumes may be incomplete per book/edition; the coverage-driven model builds what exists and flags the rest, never fabricates; manifests record flags.
-- **Recomposition** — if validation or implementation shows the item over-fat for one PR, the recomposition protocol splits it; this spec becomes the umbrella (recorded at that time).
 
 ## 10. Completion gate
 

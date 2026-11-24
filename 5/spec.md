@@ -6,7 +6,7 @@
 
 **Root Cause / Motivation:** The validated roadmap (up-beeblum#3, ROADMAP.md) sequences this work after the scaffold (up-beeblum#1) and the documents stage; the developer directive (2026-11-24) files the follow-up specs from the roadmap so the pipeline takes items in order of importance.
 
-**Approach Chosen:** Build the component/allomorph table on the Nisinoon schema columns (Allomorph-A/Condition-A) from Fermino 2000 pp. 14-58 conditioning rules, conditioning-rule calibration to attested forms is stage-1's calibration task (roadmap item 3); seed the per-form map over the corpus lexicon's 66,863 forms with provenance classes (rule-derived / human-verdict / flagged).
+**Approach Chosen:** Build the component/allomorph table on the Nisinoon schema columns (Allomorph-A/Condition-A) from Fermino 2000 pp. 14-58 conditioning rules, cross-anchored to the corpus's Goddard-1981 proofed lines (the attested third-person forms verify the conditioning table); seed the per-form map over the corpus lexicon's 66,863 forms with provenance classes (rule-derived / human-verdict / flagged).
 
 **Alternatives Considered & Why Discarded:**
 - *Landing inside the scaffold or documents stage* — discarded: the roadmap owns sequencing; the item is its own deliverable.
@@ -27,6 +27,7 @@
 - **R-1:** The component/allomorph data SHALL encode Fermino's conditioning system + prefix paradigms such that the table's rules reproduce Fermino's attested example paradigm rows (nuhkôt/kuhkôt/wuhkôt per uhkôt; n8sh/k8sh/8shah per 8sh; nutapun per apun).
 - **R-2:** The per-form map SHALL carry every form of the corpus lexicon (66,863 match_keys) with a provenance class.
 - **R-3:** No form SHALL be silently assigned — unmapped forms SHALL carry the `flagged` class.
+- **R-4:** The inventory's third-person conditioning rows SHALL reproduce the Goddard-1981 attested prefix forms (*uhquan*, *wuhkontash*, *wuhpit*, *ohpeteog*, *wék*) under their documented conditions, at the recorded pin.
 
 ## 4. Success criteria
 
@@ -35,6 +36,7 @@
 | SC-1 | The table's rules reproduce Fermino's attested paradigm rows | structural | run the encoded conditioning rules over Fermino's example set (uhkôt/8sh/apun paradigms); outputs match the thesis forms (R-1) |
 | SC-2 | Map keys cover the corpus lexicon 1:1 (66,863) | structural | set-compare lexicon match_keys vs map keys; zero missing (R-2) |
 | SC-3 | No form is silently assigned: every non-flagged row carries the provenance marker its class claims; rows lacking the marker carry `flagged` | structural | read the map; for each non-flagged row assert the stated rule/verdict provenance marker exists; assert every marker-less row carries `flagged` (R-3) |
+| SC-4 | The table's third-person conditioning reproduces the Goddard-1981 attested forms | structural | run the table's conditioning rules over the Goddard-attested stems; outputs match the attested forms (R-4) |
 
 ## 5. Dependencies
 
@@ -44,6 +46,8 @@
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
 | Fermino 2000 + Hicks 2006 | the derivation authority the data encodes | satisfied |
 | Corpus store (lexicon word-forms.tsv at the recorded pin) | the input SC-2's set-compare consumes | pending |
+| Corpus exports contract — the match_keys vocabulary + the lexicon dataset | the defining source of R-2's key identity | satisfied |
+| Goddard-1981 proofed phonology lines | the attestation set R-4/SC-4 compare against | satisfied |
 
 ## 6. Traceability
 
@@ -52,6 +56,7 @@
 | R-1 | SC-1 |
 | R-2 | SC-2 |
 | R-3 | SC-3 |
+| R-4 | SC-4 |
 
 ## 7. Documentation Sources
 
@@ -68,7 +73,6 @@ Each instrument costs a read or run at implementation time (minutes); skipping r
 ## 9. Edge Cases
 
 - **Upstream data maturity** — the corpus surface this item consumes may be incomplete per book/edition; the coverage-driven model builds what exists and flags the rest, never fabricates; manifests record flags.
-- **Recomposition** — if validation or implementation shows the item over-fat for one PR, the recomposition protocol splits it; this spec becomes the umbrella (recorded at that time).
 
 ## 10. Completion gate
 

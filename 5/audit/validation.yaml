@@ -45,5 +45,12 @@ validation_record:
           remediation: "landed for real this round: artifacts byte-verified; round-4 records above superseded in truth by this entry (the round-4 applied-claims were wrong where they name §2/§1/'#5 title' work which did not land)"
     - round: 6
       date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df1a9f559ffeh2eKgNcZZTOd2k)"
+      verdict: FAIL
+      findings:        - class: "DC-6 self-containment (§9 recomposition body content); scope-source mismatch on the Goddard element; uncited match_keys source"
+          classification: finding
+          remediation: "Godward anchor carried as R-4/SC-4 (Goddard-attested third-person forms verify the conditioning table); §7 contract+lexicon+Goddard rows added; recomposition entry removed from body"
+    - round: 7
+      date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent), pending"
       verdict: pending
