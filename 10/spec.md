@@ -55,7 +55,7 @@ Derivation data content; rendering engine changes beyond mark rendering.
 | Source | Type | Location | Verification |
 |--------|------|----------|--------------|
 | ROADMAP.md (up-beeblum#3) | roadmap | repository root | read, 2026-11-24 |
-| Corpus exports contract | project guide | corpus/AGENTS.md (snea-phonetics submodule tree) | read, 2026-11-23 |
+| Corpus exports contract | project guide | corpus/AGENTS.md (the corpus/ submodule — Brothertown-Language/algonquian-library) | read, 2026-11-23 |
 
 
 ## 8. Cost Frame

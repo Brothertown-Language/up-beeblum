@@ -44,6 +44,7 @@ The build pipeline's other stages; corpus content.
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
 | Roadmap item 1's regeneration tool | the pin-bump flow this integrates with | pending |
+| Corpus spine (alignment store at the recorded pin) | the data SC-1's enumeration compares against | pending |
 
 ## 6. Traceability
 
@@ -59,7 +60,7 @@ The build pipeline's other stages; corpus content.
 | Source | Type | Location | Verification |
 |--------|------|----------|--------------|
 | ROADMAP.md (up-beeblum#3) | roadmap | repository root | read, 2026-11-24 |
-| Corpus exports contract | project guide | corpus/AGENTS.md (snea-phonetics submodule tree) | read, 2026-11-23 |
+| Corpus exports contract | project guide | corpus/AGENTS.md (the corpus/ submodule — Brothertown-Language/algonquian-library) | read, 2026-11-23 |
 
 
 ## 8. Cost Frame

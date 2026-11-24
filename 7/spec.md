@@ -41,6 +41,7 @@ Stage-1 behavior; rendering; dictionary/lexicon data changes.
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
 | Stage-1 engine | the IPA output this stage renders (its ticket) | pending |
+| Roadmap item 2's derivation data | the per-form loan classes SC-2's instrument consumes (up-beeblum#5) | pending |
 
 ## 6. Traceability
 

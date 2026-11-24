@@ -19,5 +19,13 @@ validation_record:
       verdict: "FAIL — 1 finding (per above remediation applied; revalidation pending)"
     - round: 3
       date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df20c241affePIkH1FyLsHN4DN)"
+      verdict: FAIL
+      findings:
+        - class: "gap analysis / cross-reference accuracy"
+          classification: finding
+          remediation: "§5 row added for the corpus spine's alignment store (SC-1's comparator)"
+    - round: 4
+      date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent), pending"
       verdict: pending

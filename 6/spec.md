@@ -58,7 +58,7 @@ Stage-2 letter rendering (roadmap item 4); rendering/apparatus; training-data ac
 | Source | Type | Location | Verification |
 |--------|------|----------|--------------|
 | ROADMAP.md (up-beeblum#3) | roadmap | repository root | read, 2026-11-24 |
-| Corpus exports contract | project guide | corpus/AGENTS.md (snea-phonetics submodule tree) | read, 2026-11-23 |
+| Corpus exports contract | project guide | corpus/AGENTS.md (the corpus/ submodule — Brothertown-Language/algonquian-library) | read, 2026-11-23 |
 | Phonotactics record | card | snea-phonetics docs/research/phonotactics.md | read, 2026-11-24 |
 
 ## 8. Cost Frame

@@ -32,7 +32,7 @@ The conversion engine itself (roadmap item 3); ML machinery; rendering.
 |------|-----------|-------|------------|
 | SC-1 | The table's rules reproduce Fermino's attested paradigm rows | structural | run the encoded conditioning rules over Fermino's example set (uhkôt/8sh/apun paradigms); outputs match the thesis forms (R-1) |
 | SC-2 | Map keys cover the corpus lexicon 1:1 (66,863) | structural | set-compare lexicon match_keys vs map keys; zero missing (R-2) |
-| SC-3 | Every map row carries exactly one provenance class | structural | read the map; assert class membership on every row (R-3) |
+| SC-3 | No form is silently assigned: every non-flagged row carries the provenance marker its class claims; rows lacking the marker carry `flagged` | structural | read the map; for each non-flagged row assert the stated rule/verdict provenance marker exists; assert every marker-less row carries `flagged` (R-3) |
 
 ## 5. Dependencies
 
@@ -41,6 +41,7 @@ The conversion engine itself (roadmap item 3); ML machinery; rendering.
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
 | Fermino 2000 + Hicks 2006 | the derivation authority the data encodes | satisfied |
+| Corpus store (lexicon word-forms.tsv, Goddard-1981 proofed lines) | the inputs SC-2/SC-3 consume, materialized at a recorded pin | pending |
 
 ## 6. Traceability
 
