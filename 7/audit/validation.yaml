@@ -27,5 +27,13 @@ validation_record:
           remediation: "§5 row added for item 2's derivation data (SC-2's input)"
     - round: 4
       date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df20525e3ffe1fscHDECjbsbn0)"
+      verdict: FAIL
+      findings:
+        - class: "gap analysis / problem fit / DC-9 layout"
+          classification: finding
+          remediation: "§2 rationales added; SC-4 added (per-assignment verification vs the correspondence set + Fermino chart); §5 reference form corrected to up-beeblum#6"
+    - round: 5
+      date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent), pending"
       verdict: pending

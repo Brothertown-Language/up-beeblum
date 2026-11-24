@@ -27,5 +27,13 @@ validation_record:
           remediation: "§7 parenthetical misidentified the corpus tree; corrected to algonquian-library"
     - round: 4
       date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df20525e3ffe1fscHDECjbsbn0)"
+      verdict: FAIL
+      findings:
+        - class: "gap analysis / problem fit / DC-9 layout"
+          classification: finding
+          remediation: "added SC-4: copy↔spine content-correspondence + file-set equality (R-1's regeneration clause now verified)"
+    - round: 5
+      date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent), pending"
       verdict: pending

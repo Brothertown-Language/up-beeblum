@@ -27,5 +27,13 @@ validation_record:
           remediation: "§5 corpus-store dependency row added; SC-3 instrument strengthened to class-honesty (marker presence + flagged fallback)"
     - round: 4
       date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df20525e3ffe1fscHDECjbsbn0)"
+      verdict: FAIL
+      findings:
+        - class: "gap analysis / problem fit / DC-9 layout"
+          classification: finding
+          remediation: "§2 rationales added; the unexercised Goddard-1981 cross-anchor removed from §1 (calibration is item 3's task); §5 row relationship corrected"
+    - round: 5
+      date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent), pending"
       verdict: pending

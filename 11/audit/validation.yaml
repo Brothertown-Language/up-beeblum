@@ -27,5 +27,13 @@ validation_record:
           remediation: "§5 row added for the corpus spine's alignment store (SC-1's comparator)"
     - round: 4
       date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df20525e3ffe1fscHDECjbsbn0)"
+      verdict: FAIL
+      findings:
+        - class: "gap analysis / problem fit / DC-9 layout"
+          classification: finding
+          remediation: "§2 rationales added; R-5/named staleness error stated; SC-4 → R-5; §6 rebuilt"
+    - round: 5
+      date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent), pending"
       verdict: pending

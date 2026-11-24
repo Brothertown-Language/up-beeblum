@@ -33,6 +33,7 @@ Derivation stages and rendering (roadmap items 3-7); corpus-repo changes (correc
 | SC-1 | Two runs at the same pin produce byte-identical outputs | structural | run twice in temp dirs; diff; zero differences (R-1) |
 | SC-2 | Manifests record the ROADMAP anchor's field list (corpus SHA, derivation-data version) | structural | read manifests; compare fields against the recorded pin + derivation-data state (R-2) |
 | SC-3 | Flags populate for every data row of every copy | structural | read copies; assert flag columns non-empty for all rows (R-3) |
+| SC-4 | Copies correspond to the spine at the recorded pin, and the emitted file set equals the spine-supported set | structural | compare every emitted copy's rows against the alignment-store rows for its book/column; assert per-row agreement; assert file-set equality against the expected book set (R-1) |
 
 ## 5. Dependencies
 
@@ -46,7 +47,7 @@ Derivation stages and rendering (roadmap items 3-7); corpus-repo changes (correc
 
 | Requirement | Success criteria |
 |-------------|------------------|
-| R-1 | SC-1 |
+| R-1 | SC-1, SC-4 |
 | R-2 | SC-2 |
 | R-3 | SC-3 |
 

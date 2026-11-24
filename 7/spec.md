@@ -33,6 +33,7 @@ Stage-1 behavior; rendering; dictionary/lexicon data changes.
 | SC-1 | Map covers the phoneme inventory, no gaps | structural | cross-check map keys vs the stage-1 phoneme set; zero missing (R-1) |
 | SC-2 | Loan-class rows render per policy | structural | test policy paths on known loan forms from the derivation data (R-2) |
 | SC-3 | Same input, same output across runs | structural | run twice; diff; zero differences (R-3) |
+| SC-4 | Every segment's letter assignment matches the verified correspondence set | structural | cross-check each map entry against the captured correspondence rows + the Fermino 2000 phonemic chart; zero mismatches (R-1) |
 
 ## 5. Dependencies
 
@@ -40,14 +41,14 @@ Stage-1 behavior; rendering; dictionary/lexicon data changes.
 |-----------|--------------|--------|
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
-| Stage-1 engine | the IPA output this stage renders (its ticket) | pending |
+| Up-beeblum#6 (stage-1 engine) | the IPA output this stage renders | pending |
 | Roadmap item 2's derivation data | the per-form loan classes SC-2's instrument consumes (up-beeblum#5) | pending |
 
 ## 6. Traceability
 
 | Requirement | Success criteria |
 |-------------|------------------|
-| R-1 | SC-1 |
+| R-1 | SC-1, SC-4 |
 | R-2 | SC-2 |
 | R-3 | SC-3 |
 

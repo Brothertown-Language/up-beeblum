@@ -1,6 +1,4 @@
-# SPEC: Derivation data — component/allomorph inventory + per-form map
-
-## 1. Intent and Executive Summary
+# SPEC:  Intent and Executive Summary
 
 **Problem Statement:** Stage-1 conversion needs its knowledge layer: the Wampanoag component/allomorph inventory and a per-unique-form derivation map over the corpus lexicon.
 
@@ -41,7 +39,7 @@ The conversion engine itself (roadmap item 3); ML machinery; rendering.
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
 | Fermino 2000 + Hicks 2006 | the derivation authority the data encodes | satisfied |
-| Corpus store (lexicon word-forms.tsv, Goddard-1981 proofed lines) | the inputs SC-2/SC-3 consume, materialized at a recorded pin | pending |
+| Corpus store (lexicon word-forms.tsv at the recorded pin) | the input SC-2's set-compare consumes | pending |
 
 ## 6. Traceability
 
@@ -58,7 +56,6 @@ The conversion engine itself (roadmap item 3); ML machinery; rendering.
 | ROADMAP.md (up-beeblum#3) | roadmap | repository root | read, 2026-11-24 |
 | Fermino 2000 (Baird), Introduction to Wampanoag Grammar | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
 | Hicks 2006, A List of Initials and Finals in Wôpanâak | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
-| Goddard-1981 proofed phonology | data | corpus docs/research/sources/goddard-1981-mass-phonology-lines.tsv | read, 2026-11-24 |
 
 ## 8. Cost Frame
 
