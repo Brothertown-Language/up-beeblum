@@ -1,0 +1,29 @@
+
+spec3_validation_record:
+  artifact: spec
+  entries:
+    - round: 1
+      date: "2026-11-24"
+      reviewer: "fresh-context dispatch (general subagent, ses_df407f601ffeF68NgLcM55QZ8P)"
+      verdict: FAIL
+      repo_containment: "both prongs clean"
+      findings:
+        - class: "cross-reference sufficiency / fabricated claims"
+          classification: finding
+          ground: "the PD ruling quote attributed to up-beeblum#1 spec exists only in session chat"
+          remediation: "citation corrected to the session-chat provenance, stated as chat-only"
+    - round: 2
+      date: "2026-11-24"
+      reviewer: "fresh-context dispatch (general subagent, ses_df406ed88ffeQg0VBPc6N8W7mT)"
+      verdict: FAIL
+      repo_containment: "both prongs clean"
+      findings:
+        - class: "cross-reference sufficiency"
+          classification: finding
+          ground: "edge case 1 cited SC-2's instrument for an intent-only-phrasing check SC-2 did not carry"
+          remediation: "assertion folded into SC-2 (criterion + instrument extended)"
+    - round: 3
+      date: "2026-11-24"
+      reviewer: "fresh-context dispatch (general subagent, ses_df4064b09fferceyMxj6Ql70Yp)"
+      verdict: PASS
+      notes: "zero findings; containment clean; layout + instrument classes verified"

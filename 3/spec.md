@@ -19,7 +19,7 @@
 
 **User Intent / Original Prompt** (developer statements verbatim):
 - "then create the spec for the needed roadmap file/readme file/agents.md file and implement for stacked PR, then file the follow up specs based on the roadmap." (2026-11-24)
-- Design-record anchors the documents state: "sub-modules for now are reference only, the repo needs to be self-contained"; "=> Regenerated"; "for now, tex/PDF; markdown"; "version builds what it can covering both complete editions if possible"; "proofed public domain is public domain"; "/original/=>/IPA/=>Wampanoag" — "place into the new repo along side the rest of the new" (2026-11-23, all quoted in up-beeblum#1's spec §1).
+- Design-record anchors the documents state (2026-11-23, quoted verbatim in up-beeblum#1's spec §1 except where noted): "sub-modules for now are reference only, the repo needs to be self-contained"; "=> Regenerated"; "for now, tex/PDF; markdown"; "version builds what it can covering both complete editions if possible"; "/original/=>/IPA/=>Wampanoag" — "place into the new repo along side the rest of the new"; and the PD ruling — recorded only in this session's chat, never in a store artifact: "proofed public domain is public domain".
 
 ## 2. Not Included
 
@@ -39,8 +39,8 @@
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | ROADMAP.md exists; each R-1 item appears with a one-line description and design anchor; no status fields | structural | read ROADMAP.md; assert the item set + anchors; grep for `STATUS:`-style fields → zero hits |
-| SC-2 | README.md carries each R-2 fact | structural | read README.md; locate and assert each R-2 fact (identity, texts + column sets, architecture/regeneration/manifests, delivery, submodules, provenance/licensing, roadmap pointer) |
+| SC-1 | ROADMAP.md exists; each R-1 item appears with a one-line description and design anchor; no status fields | structural | read ROADMAP.md; assert the item set + anchors; `grep -nE '^[[:space:]]*(STATUS|Status|status)[[:space:]]*[:=]' ROADMAP.md` → zero matches |
+| SC-2 | README.md carries each R-2 fact, and states unimplemented roadmap facts in intent-only phrasing ("will land via roadmap work"), never as delivered | structural | read README.md; locate and assert each R-2 fact (identity, texts + column sets, architecture/regeneration/manifests, delivery, submodules, provenance/licensing, roadmap pointer); for regeneration and unimplemented roadmap facts, assert the intent-only phrasing |
 | SC-3 | AGENTS.md carries each R-3 rule | structural | read AGENTS.md; locate and assert each R-3 rule |
 | SC-4 | No fabricated content: every load-bearing claim traces to §7's sources | structural | cross-check each load-bearing claim against §7; any uncited load-bearing claim fails |
 | SC-5 | Mutual consistency + single-sourcing + attribution | structural | read all three; assert no operative fact stated twice-as-authority or contradictorily; assert the footer in each |
@@ -69,7 +69,7 @@ Every SC traces (SC-1→R-1, SC-2→R-2, SC-3→R-3, SC-4/SC-5→R-4); no orphan
 
 | Source | Type | Location | Verification |
 |--------|------|----------|--------------|
-| The 2026-11-23 design record | conversation | quoted verbatim in up-beeblum#1 spec §1 | read, this session |
+| The 2026-11-23 design record | conversation | quoted verbatim in up-beeblum#1 spec §1, except the PD ruling ("proofed public domain is public domain"), which is quoted from this session's chat directly (held in session context, 2026-11-23) | read, this session |
 | up-beeblum scaffold tree | repository | branch `feature/initial-contents` | read (implement + verify runs, 2026-11-24) |
 | snea-phonetics AGENTS.md | project guide | /home/muksihs/git/snea-phonetics/AGENTS.md | read, 2026-11-23 |
 | Reference PDFs tracking | store row | snea-phonetics `docs/research/reference-pdfs/` + catalogue rows (branch `feature/thesis-reference-pdfs`) | read + sha-recorded, 2026-11-24 |
@@ -86,7 +86,6 @@ Every SC traces (SC-1→R-1, SC-2→R-2, SC-3→R-3, SC-4/SC-5→R-4); no orphan
 
 - **README states a fact the scaffold doesn't yet implement** — Condition: text-copy regeneration (roadmap item) is described but unimplemented. Expected behavior: README/ROADMAP describe intent ("will land via roadmap work") without claiming delivered state; no status fields. Resolution: SC-2's instrument reads intent-only phrasing for unimplemented facts.
 - **Name spelling (up-beeblum)** — Condition: the repository name is the modern-orthography rendering of the title. Expected behavior: README records the name's derivation (title word, rule-derived 2026-11-23, reconcile-if-WLRP-publishes note). Resolution: recorded once in README.
-- **The remote issue numbering** — Condition: GitHub shares an issue/PR number sequence (PR #2 consumed 2; this spec is remote #3). Expected behavior: the local record carries the remote-assigned number (repaired). Resolution: recorded here; future filings reserve remote-first always.
 
 ## 10. Completion gate
 
