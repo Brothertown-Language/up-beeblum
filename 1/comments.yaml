@@ -1,1 +1,9 @@
-comments: []
+comments:
+- type: internal
+  body: 'YAML repair, 2026-11-24: audit/validation.yaml was invalid-yaml (stray unindented
+    double-quote line after the round verify-1 notes entry) — named by the full validate-yaml
+    sweep during the EGGROLL research spec filing (up-beeblum#13); repaired on discovery
+    in the same workflow via scoped single-file sub-agent (one-line removal verified
+    against the pre-repair git diff), and the full store re-sweep returned exit 0
+    at the synced HEAD.'
+  timestamp: '2026-11-24T14:30:38+00:00'
