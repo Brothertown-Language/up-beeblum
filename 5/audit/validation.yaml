@@ -95,3 +95,21 @@ validation_record:
         verdict: PASS
         findings: []
         notes: "one-item-per-SC with no orphans; explicit cycle-free dependency order; executable instruments matching the spec's instrument column; scope confined to the spec's surfaces; Hicks-unavailable handled under spec §9 (never fabricated); no status fields; structure conforms to plan-structure-standards.md"
+  - artifact: implementation (deliverable)
+    entries:
+      - round: 1
+        date: "2026-11-24"
+        reviewer: "fresh-context verify dispatch (general subagent, ses_df101b56dffe45SBeFcCVbQd85)"
+        verdict: FAIL
+        sc_verdicts: {SC-1: PASS, SC-2: PASS, SC-3: PASS, SC-4: PASS}
+        findings:
+          - class: "declared-gate failure (ruff lint, RUF100 unused noqa)"
+            classification: finding
+            remediation: "noqa dropped (commit f93257a); lint gate clean"
+      - round: 2
+        date: "2026-11-24"
+        reviewer: "fresh-context verify re-dispatch (general subagent, ses_df100be8cffe1283L6U4IOMjw2)"
+        verdict: PASS
+        sc_verdicts: {SC-1: PASS, SC-2: PASS, SC-3: PASS, SC-4: PASS}
+        findings: []
+        notes: "reviewer independently executed pytest (23 passed), ruff (clean), pyright (0 errors), and the SC-2 set-compare (66,863 vs 66,863, zero missing/extra, manifest pin bf3750158 matches)"
