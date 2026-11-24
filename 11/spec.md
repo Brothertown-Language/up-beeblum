@@ -18,11 +18,12 @@
 
 ## 2. Not Included
 
-The build pipeline's other stages; corpus content.
+- The build pipeline's other stages — this item defines the manifest interface; the consumers' behavior is their own deliverables.
+- Corpus content — the manifest is generated from the contract at pin time, never hand-maintained.
 
 ## 3. Requirements
 
-- **R-1:** The manifest SHALL enumerate every book/edition the corpus spine carries, with row + flag counts.
+- **R-1:** The manifest SHALL enumerate every book/edition the corpus spine carries, with row + flag counts, and record the source-pin SHA it was generated from.
 - **R-2:** The build SHALL consume the manifest; uncovered books SHALL appear as named gaps, never silently absent.
 - **R-3:** Manifest regeneration SHALL be part of the pin-bump flow — running the pin-bump procedure SHALL regenerate the manifest.
 - **R-4:** An enumerated-unknown book (a manifest state the corpus spine does not carry) SHALL fail the enumeration loudly with a named enumeration error, per the item's stated design.
@@ -34,7 +35,7 @@ The build pipeline's other stages; corpus content.
 |------|-----------|-------|------------|
 | SC-1 | Manifest matches the spine's actual rows | structural | regenerate; compare per-book counts vs the alignment store (R-1) |
 | SC-2 | Build targets + gap notes follow the manifest | structural | run build; assert target set + gap notes agree with the manifest (R-2) |
-| SC-3 | Pin-bump regenerates the manifest | structural | run the pin-bump flow twice; assert the manifest's SHA field updates each time (R-3) |
+| SC-3 | Pin-bump regenerates the manifest | structural | run the pin-bump flow; assert the manifest's source-pin SHA field changes to the new pin's SHA (R-1, R-3) |
 | SC-4 | Stale manifest fails the build with the named staleness error | structural | flip a count in a staged manifest; assert the R-5 named staleness failure (R-5) |
 | SC-5 | Enumerated-unknown book fails loudly | structural | feed a manifest row naming an absent book; assert the named enumeration failure (R-4) |
 

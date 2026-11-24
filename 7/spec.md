@@ -6,7 +6,7 @@
 
 **Root Cause / Motivation:** The validated roadmap (up-beeblum#3, ROADMAP.md) sequences this work after the scaffold (up-beeblum#1) and the documents stage; the developer directive (2026-11-24) files the follow-up specs from the roadmap so the pipeline takes items in order of importance.
 
-**Approach Chosen:** Encode the phoneme-letter map (8/uː, ee/iː, u/ə, ô/ã, ch/ʧ, q/kʷ, ty/tʲ, ...) from Baird 2000's phonemic design and the verified correspondence set; the loan-class policy layer (names keep foreign letters; assimilated loans render via allophone classes; unassimilated loans retain and flag) sits on the per-form classes from roadmap item 2.
+**Approach Chosen:** Encode the phoneme-letter map (8/uː, ee/iː, u/ə, ô/ã, ch/ʧ, q/kʷ, ty/tʲ, ...) from Baird 2000's phonemic design and the verified correspondence set; the loan-class policy layer (names keep foreign letters; assimilated loans render via allophone classes; unassimilated loans retain and flag) classifies the lexicon's forms and records the per-form loan-class field into the derivation data (an extension of item-2's row schema this stage owns).
 
 **Alternatives Considered & Why Discarded:**
 - *Landing inside the scaffold or documents stage* — discarded: the roadmap owns sequencing; the item is its own deliverable.
@@ -18,12 +18,14 @@
 
 ## 2. Not Included
 
-Stage-1 behavior; rendering; dictionary/lexicon data changes.
+- Stage-1 behavior — this stage renders upstream IPA, never re-derives it (roadmap item 3's deliverable).
+- Rendering — the delivered-surface emitters are roadmap item 6's deliverable.
+- Dictionary/lexicon data changes — correspondence records are captured tracked anchors, not editable data.
 
 ## 3. Requirements
 
 - **R-1:** The stage-2 map SHALL render every legal IPA segment to exactly one WLRP letter/digraph.
-- **R-2:** Loan classes SHALL apply per policy — names keep loans' letters; unassimilated loans retain and flag.
+- **R-2:** The stage SHALL classify the lexicon's forms into loan classes, record the classification as the derivation data's per-form loan-class field, and apply the policy — names keep loans' letters; unassimilated loans retain and flag.
 - **R-3:** Stage-2 output SHALL be deterministic per input — the same input renders the same output across runs.
 
 ## 4. Success criteria
@@ -31,7 +33,7 @@ Stage-1 behavior; rendering; dictionary/lexicon data changes.
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
 | SC-1 | Map covers the phoneme inventory, no gaps | structural | cross-check map keys vs the stage-1 phoneme set; zero missing (R-1) |
-| SC-2 | Loan-class rows render per policy | structural | test policy paths on known loan forms from the derivation data (R-2) |
+| SC-2 | Loan classes classify + record + render per policy | structural | run the classifier over the lexicon; assert the loan-class field populates for every row; test the policy render paths on known loan forms (R-2) |
 | SC-3 | Same input, same output across runs | structural | run twice; diff; zero differences (R-3) |
 | SC-4 | Every segment's letter assignment matches the verified correspondence set | structural | cross-check each map entry against the captured correspondence rows + the Fermino 2000 phonemic chart; zero mismatches (R-1) |
 
@@ -42,7 +44,7 @@ Stage-1 behavior; rendering; dictionary/lexicon data changes.
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
 | Up-beeblum#6 (stage-1 engine) | the IPA output this stage renders | pending |
-| Roadmap item 2's derivation data | the per-form loan classes SC-2's instrument consumes (up-beeblum#5) | pending |
+| Up-beeblum#5 derivation data | the map rows this stage extends with the loan-class field | pending |
 
 ## 6. Traceability
 
@@ -58,8 +60,7 @@ Stage-1 behavior; rendering; dictionary/lexicon data changes.
 |--------|------|----------|--------------|
 | ROADMAP.md (up-beeblum#3) | roadmap | repository root | read, 2026-11-24 |
 | Fermino 2000 (Baird) — the phonemic design (p. 9 chart) | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
-| Colonial↔modern correspondence rows | reference | Massachusett writing systems capture (session research, 2026-11-23) | read, 2026-11-23 |
-| Correspondence table | reference | Massachusett writing systems (page-cited rows; captured in session research 2026-11-23) | read, 2026-11-23 |
+| Colonial↔modern correspondence rows | reference | the correspondence capture materialized at snea-phonetics docs/research/phonemic-calibration-sources-wampanoag.md §1.2 | read, 2026-11-23 |
 
 ## 8. Cost Frame
 

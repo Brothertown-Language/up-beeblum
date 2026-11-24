@@ -1,10 +1,12 @@
-# SPEC:  Intent and Executive Summary
+# SPEC: Derivation data — component/allomorph inventory + per-form map
+
+## 1. Intent and Executive Summary
 
 **Problem Statement:** Stage-1 conversion needs its knowledge layer: the Wampanoag component/allomorph inventory and a per-unique-form derivation map over the corpus lexicon.
 
 **Root Cause / Motivation:** The validated roadmap (up-beeblum#3, ROADMAP.md) sequences this work after the scaffold (up-beeblum#1) and the documents stage; the developer directive (2026-11-24) files the follow-up specs from the roadmap so the pipeline takes items in order of importance.
 
-**Approach Chosen:** Build the component/allomorph table on the Nisinoon schema columns (Allomorph-A/Condition-A) from Fermino 2000 pp. 14-58 conditioning rules, cross-anchored to corpus Goddard-1981 proofed lines; seed the per-form map over the corpus lexicon's 66,863 forms with provenance classes (rule-derived / human-verdict / flagged).
+**Approach Chosen:** Build the component/allomorph table on the Nisinoon schema columns (Allomorph-A/Condition-A) from Fermino 2000 pp. 14-58 conditioning rules, conditioning-rule calibration to attested forms is stage-1's calibration task (roadmap item 3); seed the per-form map over the corpus lexicon's 66,863 forms with provenance classes (rule-derived / human-verdict / flagged).
 
 **Alternatives Considered & Why Discarded:**
 - *Landing inside the scaffold or documents stage* — discarded: the roadmap owns sequencing; the item is its own deliverable.
@@ -16,7 +18,9 @@
 
 ## 2. Not Included
 
-The conversion engine itself (roadmap item 3); ML machinery; rendering.
+- The conversion engine itself — roadmap item 3's deliverable; this item produces only the data it consumes.
+- ML machinery — the assist belongs to the engine stage (item 3); the data layer declares provenance classes only.
+- Rendering — edition output is roadmap item 6's deliverable.
 
 ## 3. Requirements
 

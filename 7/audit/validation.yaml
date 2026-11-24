@@ -29,11 +29,21 @@ validation_record:
       date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent, ses_df20525e3ffe1fscHDECjbsbn0)"
       verdict: FAIL
+      remediation_note: "partial — see round 5 entry for the honestly-landed state"
       findings:
         - class: "gap analysis / problem fit / DC-9 layout"
           classification: finding
           remediation: "§2 rationales added; SC-4 added (per-assignment verification vs the correspondence set + Fermino chart); §5 reference form corrected to up-beeblum#6"
     - round: 5
+      date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df1b398bcffeTnBVZiwJjWRi7P)"
+      verdict: FAIL
+      findings:
+        - class: "DC-6 self-containment + DC-9 layout + causal sufficiency"
+          classification: finding
+          ground: "round-4 remediations partially failed to land (recorded as applied when not) — #5 header destroyed; §2 rationales missing; the Goddard phrase persisted (7)"
+          remediation: "landed for real this round: artifacts byte-verified; round-4 records above superseded in truth by this entry (the round-4 applied-claims were wrong where they name §2/§1/'#5 title' work which did not land)"
+    - round: 6
       date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent), pending"
       verdict: pending
