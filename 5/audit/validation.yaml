@@ -47,7 +47,8 @@ validation_record:
       date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent, ses_df1a9f559ffeh2eKgNcZZTOd2k)"
       verdict: FAIL
-      findings:        - class: "DC-6 self-containment (§9 recomposition body content); scope-source mismatch on the Goddard element; uncited match_keys source"
+      findings:
+        - class: "DC-6 self-containment (§9 recomposition body content); scope-source mismatch on the Goddard element; uncited match_keys source"
           classification: finding
           remediation: "Godward anchor carried as R-4/SC-4 (Goddard-attested third-person forms verify the conditioning table); §7 contract+lexicon+Goddard rows added; recomposition entry removed from body"
     - round: 7
@@ -79,3 +80,10 @@ validation_record:
       reviewer: "fresh-context re-dispatch (general subagent, ses_df180eb4affeny5EvlvfoVWkys)"
       verdict: PASS
       notes: "zero findings; every load-bearing row fact-verified at pin bf3750158"
+    - round: 11
+      date: "2026-11-24"
+      reviewer: "fresh-context on-demand audit dispatch (general subagent, ses_df12d1c23ffe5tf0Pq8Xe7erbW)"
+      verdict: PASS
+      repo_containment: "both prongs clean (scope — single repo, requirement paths resolve to up-beeblum, corpus consumed at its recorded pin by reference; home — .issues/ up-beeblum#5)"
+      findings: []
+      notes: "on-demand re-audit against the unchanged criteria set; every load-bearing fact independently re-verified at pin bf3750158 — Goddard attested third-person forms verbatim (uhquan, wuhkontash, wuhpit, uhpeteog/wuhpeteog, wek), lexicon unique match_keys counted at 66,863 with header row confirmed, build_lexicon.py defines match_key identity, exports contract holds the lexicon outside its six surfaces, Nisinoon schema carries Allomorph-A/Condition-A, Fermino paradigm rows (nuhkôt/kuhkôt/wuhkôt, n8sh/k8sh/8shah, nutapun) located in the tracked reference PDF, roadmap row matches scope/anchors/figures"

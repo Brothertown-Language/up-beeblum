@@ -47,7 +47,8 @@ validation_record:
       date: "2026-11-24"
       reviewer: "fresh-context re-dispatch (general subagent, ses_df1a9f559ffeh2eKgNcZZTOd2k)"
       verdict: FAIL
-      findings:        - class: "DC-6 self-containment (§9 recomposition body content)"
+      findings:
+        - class: "DC-6 self-containment (§9 recomposition body content)"
           classification: finding
           remediation: "recomposition entry removed from body"
     - round: 7
