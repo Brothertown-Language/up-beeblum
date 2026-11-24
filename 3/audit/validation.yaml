@@ -27,3 +27,13 @@ spec3_validation_record:
       reviewer: "fresh-context dispatch (general subagent, ses_df4064b09fferceyMxj6Ql70Yp)"
       verdict: PASS
       notes: "zero findings; containment clean; layout + instrument classes verified"
+  plan:
+    - round: 1
+      date: "2026-11-24"
+      reviewer: "fresh-context dispatch (general subagent, ses_df405ba9cffefkyuZMrHVwCXXD)"
+      verdict: PASS
+      notes: "zero findings"
+  implementation:
+    - round: items-1-5
+      date: "2026-11-24"
+      evidence: "SC-1 instrument executed (9/9 items located; status-fields grep = 0); SC-2/SC-3 fact-walks executed; SC-4 cross-check walked (one anchor defect found + fixed: loan-precedent anchor restated to the published Fielding dictionaries); SC-5 consistency read executed (single-sourcing clean); pre-commit hook caught store-path anchors in ROADMAP/AGENTS - remediated to qualified tracker references before commit"
