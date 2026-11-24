@@ -34,6 +34,21 @@ spec3_validation_record:
       verdict: PASS
       notes: "zero findings"
   implementation:
+    - round: verify-1
+      date: "2026-11-24"
+      reviewer: "fresh-context verify dispatch (general subagent, ses_df4042b47ffebp5sINoZ5mXkGD)"
+      verdict: FAIL
+      findings:
+        - class: "fabricated claims (factual count)"
+          classification: finding
+          ground: "ROADMAP item 2 said 66,864 forms; the corpus lexicon's count is 66,863 (header row miscounted)"
+          remediation: "count corrected in both mentions; re-verified"
+    - round: verify-2
+      date: "2026-11-24"
+      reviewer: "fresh-context verify dispatch (general subagent, ses_df401cd95ffenasZKiKfjtjE0D)"
+      verdict: PASS
+      notes: "remediation confirmed; no survivor count; prior criteria unaffected"
+  implementation:
     - round: items-1-5
       date: "2026-11-24"
       evidence: "SC-1 instrument executed (9/9 items located; status-fields grep = 0); SC-2/SC-3 fact-walks executed; SC-4 cross-check walked (one anchor defect found + fixed: loan-precedent anchor restated to the published Fielding dictionaries); SC-5 consistency read executed (single-sourcing clean); pre-commit hook caught store-path anchors in ROADMAP/AGENTS - remediated to qualified tracker references before commit"
