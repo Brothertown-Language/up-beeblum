@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2026 Michael Conrad
+# SPDX-License-Identifier: MIT
+#
+# up-beeblum — the quad-text polyglot edition of the Eliot Indian Bible.
+# Four parallel texts — modern Wampanoag (WLRP orthography, derived via an
+# IPA-mediated conversion chain), the colonial original orthography per
+# edition (1663 first / 1685–1680 second), the edition's English frame
+# (Geneva 1599 / KJV), and the World English Bible — keyed on a
+# verse-ID spine, delivered as interlinear LaTeX/PDF works plus Markdown.
+# IPA-mediated derivation lives in this repository per the 2026-11-23
+# architecture ruling; the reference submodules (corpus/, snea-lib/) are
+# provenance seams only, never build dependencies.
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+[project]
+name = "up-beeblum"
+version = "0.1.0"
+description = "Quad-text polyglot edition of the Eliot Indian Bible — modern Wampanoag, colonial originals, English frames, WEB"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8.3"]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pyright]
+include = ["src"]

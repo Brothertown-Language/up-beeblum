@@ -1,0 +1,14 @@
+# up-beeblum ignore policy — the exact effective set:
+# .issues/ (the issue-store worktree), .opencode/ (the agent deck checkout),
+# private/ (rights-restricted material), tmp/ (session scratch), outputs/
+# (generated outputs), and the LaTeX byproduct extensions.
+# (These contents never enter history.)
+.issues/
+.opencode/
+private/
+tmp/
+outputs/
+*.aux
+*.log
+*.out
+*.toc

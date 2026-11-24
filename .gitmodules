@@ -1,0 +1,6 @@
+[submodule "corpus"]
+	path = corpus
+	url = git@github.com:Brothertown-Language/algonquian-library.git
+[submodule "snea-lib"]
+	path = snea-lib
+	url = git@github.com:Brothertown-Language/snea-lib.git
