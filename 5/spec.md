@@ -27,7 +27,7 @@
 - **R-1:** The component/allomorph data SHALL encode Fermino's conditioning system + prefix paradigms such that the table's rules reproduce Fermino's attested example paradigm rows (nuhkôt/kuhkôt/wuhkôt per uhkôt; n8sh/k8sh/8shah per 8sh; nutapun per apun).
 - **R-2:** The per-form map SHALL carry every form of the corpus lexicon (66,863 match_keys) with a provenance class.
 - **R-3:** No form SHALL be silently assigned — unmapped forms SHALL carry the `flagged` class.
-- **R-4:** The inventory's third-person conditioning rows SHALL reproduce the Goddard-1981 attested prefix forms (*uhquan*, *wuhkontash*, *wuhpit*, *ohpeteog*, *wék*) under their documented conditions, at the recorded pin.
+- **R-4:** The inventory's third-person conditioning rows SHALL reproduce the Goddard-1981 attested prefix forms (*uhquan*, *wuhkontash*, *wuhpit*, *uhpeteog* (with its attestant *wuhpeteog*), *wék*) under their documented conditions, at the recorded pin.
 
 ## 4. Success criteria
 
