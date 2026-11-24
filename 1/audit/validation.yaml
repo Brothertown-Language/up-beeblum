@@ -64,6 +64,55 @@ validation_record:
       reviewer: fresh-context dispatch (general subagent, ses_df4163a26ffeLwF8SKCL09Lh5N)
       verdict: PASS
       notes: "zero findings; repo-boundary containment both prongs clean; feasibility spot-checked live (referenced repos, AGENTS.md, .gitignore all exist)"
+    - round: 4
+      date: "2026-11-24"
+      reviewer: fresh-context dispatch (general subagent, ses_df4163a26ffeLwF8SKCL09Lh5N)
+      verdict: PASS
+      notes: "zero findings; repo-boundary containment both prongs clean; feasibility spot-checked live (referenced repos, AGENTS.md, .gitignore all exist)"
+    - round: 5
+      date: "2026-11-24"
+      reviewer: "fresh-context dispatch (general subagent, ses_df410db0dffe0T5JLH05Vxkeyg) — spec+plan joint revalidation"
+      verdict: "SPEC PASS, PLAN FAIL"
+      origin: "mid-cycle discovery (implement rule 4): the ignore set omitted .issues/ — the issue-store worktree the family convention gitignores; spec R-5/SC-4 and plan item 6 revised in place"
+      findings:
+        - "spec: PASS (zero findings, revised R-5/SC-4 clean)"
+        - class: "DC-5 internal inconsistency"
+          classification: finding
+          ground: "plan item 6 GREEN said 'eight patterns'; the revised set has nine"
+          remediation: "count corrected to 'nine patterns'; plan re-validated"
+    - round: 6
+      date: "2026-11-24"
+      reviewer: "fresh-context dispatch (general subagent, ses_df4105d36ffeBszlUaXqfsSODx)"
+      verdict: PASS
+      notes: "plan: zero findings; nine-pattern set consistent; coverage/ordering/instruments/surfaces clean"
+    - round: 7
+      date: "2026-11-24"
+      reviewer: "fresh-context joint dispatch (general subagent, ses_df40f06fcffeE7O62zVb6oF5i1)"
+      verdict: "SPEC FAIL, PLAN FAIL"
+      origin: "second mid-cycle discovery: SC-7's tracked-pair shape misstated the family precedent"
+      findings:
+        - class: "fabricated claims / cross-reference insufficiency"
+          classification: finding
+          ground: "the cited precedent's tracked pair is private/README.md + private/AGENTS.md, not private/.gitignore + README (verified live by the reviewer)"
+          remediation: "R-6/SC-7 and plan item 7 revised to the actual pair; untracked local private/.gitignore reworded as never-tracked self-exclusion"
+    - round: 8
+      date: "2026-11-24"
+      reviewer: "fresh-context joint dispatch (general subagent, ses_df40e0323ffeZT3GK9uS4UcRXB)"
+      verdict: "SPEC FAIL, PLAN FAIL"
+      origin: "instrument-precision correction: check-ignore on a directory with tracked contents does not report the exclusion"
+      findings:
+        - "spec: SC-7's tracked-manifest shape verified accurate against the precedent (reviewer's live fact-check); but SC-1's absence instrument empirically fails on a compliant clone (gitlink paths materialize as empty directories) — incapable instrument + joint-infeasibility"
+        - class: "DC-5 incapable instrument / feasibility"
+          classification: finding
+          ground: "clone of a gitlink-bearing tree creates empty placeholder directories; path-absence assertions cannot pass"
+          remediation: "SC-1/edge-cases and plan items 4/8 instruments rewritten to content-absence (empty placeholders, no checkout content) — the unmaterialized state the criterion actually names"
+    - round: 9
+      date: "2026-11-24"
+      reviewer: "fresh-context joint dispatch (general subagent, ses_df40c34d1ffeB4rIZH7F55NaS7)"
+      verdict: "SPEC PASS, PLAN PASS"
+      notes: "zero findings both artifacts; working-tree fact-checks corroborate every scaffold element"
+"
+
   plan:
     - round: 1
       date: "2026-11-24"

@@ -44,20 +44,20 @@
 - **R-3:** The repository SHALL declare reference-only submodules `algonquian-library` and `snea-lib` in `.gitmodules` at their canonical paths (`corpus/`, `snea-lib/`) with canonical GitHub origins (`Brothertown-Language/algonquian-library`, `Brothertown-Language/snea-lib`).
 - **R-4:** The repository SHALL carry the committed-data skeleton: the edition directories `data/editions/1663-first/` and `data/editions/1685-second/`, plus `data/derivations/` and `data/manifests/`; per-book text copies land under the stated layout rule `data/editions/<edition>/<BOOK>/<column>.tsv` — column codes `wlp` (modern WLRP), `orig` (original orthography), `frame` (the edition's English frame), `web` — with no book data in the scaffold (books land via roadmap work).
 - **R-5:** `.gitignore` SHALL carry exactly this exclusion set: `.issues/`, `.opencode/`, `private/`, `tmp/`, `outputs/`, and the LaTeX byproduct extensions `*.aux`, `*.log`, `*.out`, `*.toc`.
-- **R-6:** `private/` SHALL carry its `.gitignore` and a README manifest consistent with the family placement rules (in-copyright material untracked by design; an acquisition-route inventory of record).
+- **R-6:** `private/` SHALL carry a README manifest and an AGENTS.md placement-rules file, **both tracked by the parent repository** (force-staged past the directory exclusion, matching the family precedent — snea-phonetics tracks `private/README.md` and `private/AGENTS.md` inside its excluded `private/`); `private/.gitignore` exists as an untracked local self-exclusion and is never tracked; the directory itself remains excluded and all other `private/` content is untracked by design — in-copyright material's acquisition routes record in the tracked manifest.
 - **R-7:** The repository SHALL carry a smoke test suite under `test/` containing at least one pytest-collectable test, so the SC-1 run exercises a real suite rather than an empty target.
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | Fresh-clone smoke green: `uv sync && uv run pytest test/` exits 0 with neither submodule materialized | behavioral | clone to a temp dir; assert both submodule paths absent; run both commands; assert exit 0 |
+| SC-1 | Fresh-clone smoke green: `uv sync && uv run pytest test/` exits 0 with neither submodule materialized | behavioral | clone to a temp dir; assert both gitlink paths hold no checkout content (empty placeholder directories, no tracked content, no working `.git`) — the unmaterialized state; run both commands; assert exit 0 |
 | SC-2 | Layout skeleton matches R-4: the two edition directories, `data/derivations/`, and `data/manifests/` exist | structural | path-existence check enumerating those four paths |
 | SC-3 | `.gitmodules` lists exactly the two reference submodules with canonical URLs and paths | structural | `git config --file .gitmodules --list` output compared against the R-3 values |
 | SC-4 | `.gitignore`'s effective patterns (non-blank, non-comment lines) equal the R-5 set, with nothing added | structural | parse `.gitignore` lines minus blank/comment lines; compare the resulting set for equality against the R-5 enumeration |
 | SC-5 | `pyproject.toml` carries the R-2 sections with the R-2 stated values (`testpaths = ["test"]`, `[tool.ruff]`, pyright `include = ["src"]`) | structural | read `pyproject.toml`; assert those three concrete values |
 | SC-6 | `src/up_beeblum/` exists and contains an `__init__.py` | structural | path-existence check for `src/up_beeblum/__init__.py` |
-| SC-7 | `private/` contains a `.gitignore` and a README manifest; neither is tracked by the parent repository | structural | path-existence of `private/.gitignore` + `private/README.md`; `git check-ignore private/` confirms exclusion |
+| SC-7 | `private/` contains README.md and AGENTS.md, both tracked; `private/.gitignore` untracked; new content under the directory is excluded | structural | path-existence of `private/README.md` + `private/AGENTS.md`; `git ls-files private/` lists exactly those two; `test -f private/.gitignore` (untracked) holds; `git check-ignore private/<sample-new-path>` confirms content exclusion |
 | SC-8 | The smoke suite is collectable: pytest reports at least one collected test from `test/` | structural | `uv run pytest test/ --collect-only -q` reports a test count ≥ 1, exit 0 |
 
 ## 5. Dependencies
@@ -104,8 +104,8 @@ Every SC traces (SC-1→R-2/R-3/R-7, SC-2→R-4, SC-3→R-3, SC-4→R-5, SC-5→
 
 ## 9. Edge Cases
 
-- **Fresh clone without submodule materialization** — Condition: clone with submodules absent (the `.gitmodules`-declared paths hold no content). Expected behavior: `uv sync && pytest green`. Resolution: SC-1's instrument asserts the absence before running, which is the property's proof.
-- **Submodule accidentally materialized** — Condition: a consumer runs `git submodule update --init` before the run. Expected behavior: SC-1's absence preconditions report the environment deviation (both paths present), and the criterion's verification is the absent-state run; the smoke suite itself imports neither submodule. Resolution: the materialized state is not a verification target of this spec — de-materialize (`git submodule deinit --all --force` per the branch card's remediation path) and re-run; the deviation is recorded, not a permanent failure.
+- **Fresh clone with submodules unmaterialized** — Condition: clone with submodules unmaterialized (the `.gitmodules`-declared paths surface only as empty gitlink placeholder directories holding no checkout). Expected behavior: `uv sync && pytest green`. Resolution: SC-1's instrument asserts the content-less state before running, which is the property's proof.
+- **Submodule accidentally materialized** — Condition: a consumer runs `git submodule update --init` before the run. Expected behavior: SC-1's precondition reports the environment deviation (checkout content present at a gitlink path), and the criterion's verification is the unmaterialized-state run; the smoke suite itself imports neither submodule. Resolution: the materialized state is not a verification target of this spec — de-materialize (`git submodule deinit --all --force` per the branch card's remediation path) and re-run; the deviation is recorded, not a permanent failure.
 - **Empty-repo branch state** — Condition: the repository's trunk (created 2026-11-23, contains only the bootstrap commit). Expected behavior: the scaffold lands on a feature branch and PR-1; the store's `issues-data` branch never enters the main history.
 
 ## 10. Completion gate

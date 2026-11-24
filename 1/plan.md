@@ -36,7 +36,7 @@ Repository: `Brothertown-Language/up-beeblum` (this workspace). Branch: `feature
 - **RED:** `.gitmodules` absent — `git config --file .gitmodules --list` exits non-zero.
 - **GREEN:** `git submodule add` each origin at its path, then `git submodule deinit` each (leaving the gitlinks + the declared config, no working trees).
 - **Tier marks:** authors no tests; instrument class = fact check.
-- **Instrument:** `git config --file .gitmodules --list` output compared to R-3's values; both checkout paths remain absent.
+- **Instrument:** `git config --file .gitmodules --list` output compared to R-3's values; both gitlink paths hold no checkout content (empty placeholder directories, no working `.git`).
 
 **Item 5 — Data skeleton (SC-2)**
 - **Deliverable:** `data/editions/1663-first/`, `data/editions/1685-second/`, `data/derivations/`, `data/manifests/`, each carrying a `.gitkeep` placeholder; no book content.
@@ -48,21 +48,21 @@ Repository: `Brothertown-Language/up-beeblum` (this workspace). Branch: `feature
 **Item 6 — Ignore set (SC-4)**
 - **Deliverable:** `.gitignore` whose effective pattern set equals exactly: `.issues/`, `.opencode/`, `private/`, `tmp/`, `outputs/`, `*.aux`, `*.log`, `*.out`, `*.toc`.
 - **RED:** `.gitignore` absent (or its line set differs from the R-5 enumeration).
-- **GREEN:** write the file with exactly the eight patterns plus a generated-output comment block (comment lines excluded from the effective set the instrument parses).
+- **GREEN:** write the file with exactly the nine patterns plus a generated-output comment block (comment lines excluded from the effective set the instrument parses).
 - **Tier marks:** authors no tests; instrument class = fact check.
 - **Instrument:** parse `.gitignore` effective lines; set-equality against the R-5 list.
 
 **Item 7 — Private/ placement manifest (SC-7)**
-- **Deliverable:** `private/.gitignore` (self-exclusion by default) and `private/README.md` (manifest of record note: in-copyright material untracked; acquisition-route inventory).
+- **Deliverable:** `private/README.md` (manifest of record: in-copyright material untracked; acquisition routes) and `private/AGENTS.md` (the content-only placement rules) — both force-staged as the tracked pair inside the excluded directory, with an untracked local `private/.gitignore` for self-exclusion.
 - **RED:** `private/` absent.
-- **GREEN:** create both files.
+- **GREEN:** create the three files; stage with `git add -f private/README.md private/AGENTS.md`.
 - **Tier marks:** authors no tests; instrument class = fact check.
-- **Instrument:** path-existence of both files; `git check-ignore private/` reports exclusion.
+- **Instrument:** path-existence of `private/README.md` + `private/AGENTS.md`; `git ls-files private/` lists exactly those two; `test -f private/.gitignore` holds untracked; `git check-ignore private/<sample-new-path>` reports content exclusion.
 
 **Item 8 — Fresh-clone integration run (SC-1)**
 - **Deliverable:** the executed proof, no new files: the scaffold's self-containment claim demonstrated from a clean clone.
 - **RED:** clone `origin/main` to a temp dir; `uv sync` exits non-zero (empty scaffold — the current pushed state).
-- **GREEN:** clone the `feature/initial-contents` worktree to a temp dir; assert `corpus/` and `snea-lib/` absent; `uv sync && uv run pytest test/` exits 0.
+- **GREEN:** clone the `feature/initial-contents` worktree to a temp dir; assert both gitlink paths hold no checkout content (empty placeholder directories, no tracked content, no working `.git`) — the unmaterialized state; `uv sync && uv run pytest test/` exits 0.
 - **Tier marks:** authors no tests; instrument class = recorded dispatch evidence (this run's output cited in the PR body).
 - **Instrument:** the clone-run commands above, executed and recorded this cycle.
 
