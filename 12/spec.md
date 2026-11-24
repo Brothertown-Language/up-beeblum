@@ -51,7 +51,7 @@ Any other ignore additions; upstream repos.
 | Source | Type | Location | Verification |
 |--------|------|----------|--------------|
 | ROADMAP.md (up-beeblum#3) | roadmap | repository root | read, 2026-11-24 |
-| Corpus exports contract | project guide | corpus/AGENTS.md (snea-phonetics submodule tree) | read, 2026-11-23 |
+| up-beeblum#1 spec R-5 — the exact nine-pattern ignore set | store record | .issues/1/spec.md | read, 2026-11-24 |
 
 
 ## 8. Cost Frame

@@ -55,7 +55,8 @@ Stage-1 behavior; rendering; dictionary/lexicon data changes.
 | Source | Type | Location | Verification |
 |--------|------|----------|--------------|
 | ROADMAP.md (up-beeblum#3) | roadmap | repository root | read, 2026-11-24 |
-| Corpus exports contract | project guide | corpus/AGENTS.md (snea-phonetics submodule tree) | read, 2026-11-23 |
+| Fermino 2000 (Baird) — the phonemic design (p. 9 chart) | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
+| Colonial↔modern correspondence rows | reference | Massachusett writing systems capture (session research, 2026-11-23) | read, 2026-11-23 |
 | Correspondence table | reference | Massachusett writing systems (page-cited rows; captured in session research 2026-11-23) | read, 2026-11-23 |
 
 ## 8. Cost Frame

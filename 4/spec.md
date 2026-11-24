@@ -23,7 +23,7 @@ Derivation stages and rendering (roadmap items 3-7); corpus-repo changes (correc
 ## 3. Requirements
 
 - **R-1:** The tool SHALL regenerate all supported copies deterministically per pin — the same pin SHALL yield byte-identical output.
-- **R-2:** Every generated copy SHALL carry a build manifest recording (corpus SHA, input surface versions, and the derivation-data version or `none` where the column carries no derivation state), matching the ROADMAP anchor's manifest fields.
+- **R-2:** Every generated copy SHALL carry a build manifest recording (corpus SHA, derivation-data version) — the ROADMAP anchor's exact two-field list.
 - **R-3:** Per-row provenance flags (ok/uncertain/gap) SHALL be carried into the copies' metadata — no row's flag is dropped silently.
 
 ## 4. Success criteria
@@ -31,7 +31,7 @@ Derivation stages and rendering (roadmap items 3-7); corpus-repo changes (correc
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
 | SC-1 | Two runs at the same pin produce byte-identical outputs | structural | run twice in temp dirs; diff; zero differences (R-1) |
-| SC-2 | Manifests record corpus SHA + input surfaces + derivation-data state | structural | read manifests; compare against pin record + derivation-data version (R-2) |
+| SC-2 | Manifests record the ROADMAP anchor's field list (corpus SHA, derivation-data version) | structural | read manifests; compare fields against the recorded pin + derivation-data state (R-2) |
 | SC-3 | Flags populate for every data row of every copy | structural | read copies; assert flag columns non-empty for all rows (R-3) |
 
 ## 5. Dependencies

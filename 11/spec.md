@@ -51,8 +51,8 @@ The build pipeline's other stages; corpus content.
 |-------------|------------------|
 | R-1 | SC-1 |
 | R-2 | SC-2 |
-| R-3 | SC-3 |
-| R-4 | SC-4 |
+| R-3 | SC-3, SC-4 |
+| R-4 | SC-5 |
 
 ## 7. Documentation Sources
 

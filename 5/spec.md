@@ -55,7 +55,8 @@ The conversion engine itself (roadmap item 3); ML machinery; rendering.
 | Source | Type | Location | Verification |
 |--------|------|----------|--------------|
 | ROADMAP.md (up-beeblum#3) | roadmap | repository root | read, 2026-11-24 |
-| Corpus exports contract | project guide | corpus/AGENTS.md (snea-phonetics submodule tree) | read, 2026-11-23 |
+| Fermino 2000 (Baird), Introduction to Wampanoag Grammar | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
+| Hicks 2006, A List of Initials and Finals in Wôpanâak | reference PDF | snea-phonetics docs/research/reference-pdfs/ | tracked + sha-recorded 2026-11-24 |
 | Goddard-1981 proofed phonology | data | corpus docs/research/sources/goddard-1981-mass-phonology-lines.tsv | read, 2026-11-24 |
 
 ## 8. Cost Frame

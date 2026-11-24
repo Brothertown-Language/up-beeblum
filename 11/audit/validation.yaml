@@ -1,0 +1,23 @@
+validation_record:
+  artifact: spec
+  entries:
+    - round: 1
+      date: "2026-11-24"
+      reviewer: "fresh-context batch dispatch (general subagent, ses_df224c874ffev8O5Dc3NicYbWL)"
+      verdict: FAIL
+      repo_containment: "both prongs clean (all nine)"
+      findings:
+        - class: "layout systematics (DC-9): SHALL vocabulary, 4-cell §5 rows, §6 prose-table"
+          classification: finding
+          remediation: "§3 SHALL-ized; §5 rows 3-cell; §6 real tables"
+        - class: "§6 traceability contradicted §4 labels; SC-5 orphan"
+          classification: finding
+          remediation: "table corrected: R-3→SC-3,SC-4; R-4→SC-5"
+    - round: 2
+      date: "2026-11-24"
+      reviewer: "fresh-context batch re-dispatch (general subagent, ses_df21d4270ffeOhuR4GxykmmtPm)"
+      verdict: "FAIL — 1 finding (per above remediation applied; revalidation pending)"
+    - round: 3
+      date: "2026-11-24"
+      reviewer: "fresh-context re-dispatch (general subagent), pending"
+      verdict: pending
