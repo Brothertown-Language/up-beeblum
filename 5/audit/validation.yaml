@@ -76,5 +76,6 @@ validation_record:
           remediation: "rows repointed to the lexicon dataset + its builder (the actual defining source); exports-contract row marked context-only"
     - round: 10
       date: "2026-11-24"
-      reviewer: "fresh-context re-dispatch (general subagent), pending"
-      verdict: pending
+      reviewer: "fresh-context re-dispatch (general subagent, ses_df180eb4affeny5EvlvfoVWkys)"
+      verdict: PASS
+      notes: "zero findings; every load-bearing row fact-verified at pin bf3750158"
