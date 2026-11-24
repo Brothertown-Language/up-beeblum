@@ -2,6 +2,114 @@ title: '[SPEC] Roadmap, README, AGENTS.md — project documents (stacked stage)'
 status: open
 labels:
 - needs-approval
-body: ''
+body: '## Problem
+
+
+  up-beeblum''s scaffold (PR #2) carries no identity or operating documentation: no
+  README (what the project is, its architecture, provenance), no AGENTS.md (the repository''s
+  operative agent rules), no ROADMAP (the sequenced follow-up work the initial-contents
+  spec explicitly deferred to this stage). The developer directive names exactly these
+  three documents as the stacked stage''s deliverables.
+
+
+  ## Scope
+
+
+  The three documents — `README.md`, `AGENTS.md`, `ROADMAP.md` — authored from the
+  2026-11-23 design record; no machinery changes.
+
+
+  ## Requirements
+
+
+  - **R-1**: `ROADMAP.md` SHALL enumerate the program''s follow-up work items (corpus
+  pin-bump ingestion + text-copy regeneration; derivation data: component/allomorph
+  inventory + per-form map; stage-1 orthography→IPA with constrained ML assist; stage-2
+  deterministic IPA→WLRP letter map incl. loan classes; works registry + spine join;
+  LaTeX/PDF + Markdown emission; provenance/apparatus rendering; editions coverage
+  manifest; ignore-policy hardening incl. Python debris), each with a one-line description
+  and design anchors, carrying no status fields.
+
+  - **R-2**: `README.md` SHALL state: what the repository is (quad-text polyglot edition
+  of the Eliot Indian Bible), the four texts and per-edition column sets, the self-contained
+  architecture with regenerated text copies and build-manifest provenance, delivery
+  targets (interlinear LaTeX/PDF + Markdown), the reference-only submodules, provenance
+  and licensing posture (biblical texts PD per the 2026-11-23 ruling; Fermino 2000
+  / Hicks 2006 cited by reference from the snea-phonetics research tree), and the
+  pointer to ROADMAP.
+
+  - **R-3**: `AGENTS.md` SHALL carry the operative rules: build/test/lint/type commands
+  (uv family per the existing pyproject), the issue-store flow (local-issues), branch-before-modification
+  + human merge boundary, temp/attribution rules, the WLRP notation carve-out (text
+  1 renders in WLRP orthography — the recorded exception to the parent project''s
+  BL-notation ruling), the no-regex and flagged-not-filled disciplines, the reference-only
+  submodule contract, and the `private/` placement rule.
+
+  - **R-4**: The three documents SHALL be mutually consistent on every architecture
+  fact, single-sourced (each operative fact stated once, other mentions pointing at
+  their owner), and shall carry the AI-attribution footer.
+
+
+  ## Impact
+
+
+  Consumers: the follow-up specs file against the roadmap''s items; the documents
+  are the contract surface a fresh agent reads first. Risk: documentation-only — no
+  build surface touched.
+
+
+  ## Success criteria
+
+
+  | ID | Criterion | Class | Instrument |
+
+  |------|-----------|-------|------------|
+
+  | SC-1 | ROADMAP.md exists; the nine roadmap items of R-1 appear, each with description
+  + anchor; no STATUS fields | structural | read ROADMAP.md; assert the item set and
+  their anchors; grep for status-field patterns → none |
+
+  | SC-2 | README.md carries the R-2 facts (identity, four texts + both editions''
+  column sets, self-containment + regeneration + manifests, delivery, submodules reference-only,
+  provenance/licensing incl. the two theses, roadmap pointer) | structural | read
+  README.md; assert each R-2 fact by locating its statement |
+
+  | SC-3 | AGENTS.md carries the R-3 rules (commands, store, branch/merge discipline,
+  temp, attribution, WLRP carve-out, no-regex, flagged-not-filled, reference-only
+  submodules, private/ rule) | structural | read AGENTS.md; assert each R-3 rule by
+  locating its statement |
+
+  | SC-4 | No fabricated content: every claim in the three documents traces to the
+  spec''s documentation sources; no invented data | structural | cross-check each
+  load-bearing claim against the §7 sources; any uncited load-bearing claim is a failure
+  |
+
+  | SC-5 | Consistency + single-sourcing: no operative architecture fact stated contradictorily
+  or duplicated as the authority in two documents | structural | read all three; assert
+  the single-sourcing contract |
+
+
+  ## Out of scope
+
+
+  Any machinery (the roadmap describes follow-up items; this spec implements none);
+  version bumps; the `__pycache__` debris cleanup itself (roadmap item R-1 names the
+  hardening work).
+
+
+  ## Approach
+
+
+  Author the three documents from the design record + verified sibling conventions;
+  the roadmap owns sequencing, README owns identity, AGENTS owns operating rules.
+
+
+  > Full spec and plan artifacts: https://github.com/Brothertown-Language/up-beeblum/tree/issues-data/2/
+
+
+  `.issues/2/`
+
+  '
 created_at: '2026-11-24T05:11:24+00:00'
-updated_at: '2026-11-24T05:11:24+00:00'
+updated_at: '2026-11-24T05:11:30+00:00'
+github_url: https://github.com/Brothertown-Language/up-beeblum/issues/3
