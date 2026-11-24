@@ -12,3 +12,4 @@ outputs/
 *.log
 *.out
 *.toc
+__pycache__/

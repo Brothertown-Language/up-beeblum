@@ -1,0 +1,9 @@
+{
+  "artifact": "form-map.tsv",
+  "corpus_sha": "bf3750158bfaf30227c301418f228de44b110872",
+  "rows": 66863,
+  "provenance_classes": {
+    "flagged": "seed state; rule-derived/human-verdict resolve per-row with a marker"
+  },
+  "generator": "src/up_beeblum/derivation_map.py"
+}

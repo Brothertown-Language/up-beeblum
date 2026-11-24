@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2026 Michael Conrad
+# SPDX-License-Identifier: MIT
+# Component/allomorph inventory — up-beeblum#5.
+# Nisinoon-schema columns (Allomorph-A / Condition-A), tab-separated, UTF-8.
+# Every row cites the source surface it encodes (Fermino 2000 book page, or the
+# corpus's Goddard-1981 proofed lines at pin bf3750158). No row is asserted that
+# a cited surface does not document.
+#
+# Columns:	id	rule_type	stem_initial	dependency	person_slot	allomorph	condition	source
+# rule_type: prefix-rule | suffix-rule | theme-rule | verb-rule
+# stem_initial: * (any) | consonant | vowel | 8 | hC
+# dependency: * (any) | dependent | independent | none (verbs)
+# person_slot: * | 1 | 2 | 3 | X | 1p | 12 | 2p | 3p | 3' | list
+R01	prefix-rule	*	*	1,2,X	nu- ku- mu-	full/expected personal prefix: 1=nu-, 2=ku-, X=mu- (consonant-initial general: expected prefix used regardless of dependency)	Fermino 2000 pp.14,16,17,23
+R02	prefix-rule	*	*	3	wu-	full third-person prefix (base set); retained unless a conditioning class applies	Fermino 2000 pp.14,17
+R03	prefix-rule	vowel	dependent	1,2	n- k-	prefix loses its vowel (nu->n-, ku->k-): dependent vowel-initial noun/verb stem	Fermino 2000 pp.16,19
+R04	prefix-rule	vowel	independent	1,2,3	nu-t ku-t wu-t	full prefix + intrusive -t- before a vowel-initial stem that is not dependent (nouns; AI verbs pp.31,33)	Fermino 2000 pp.20,21,23,31
+R05	prefix-rule	m|p|k|w	*	3	u-	third-person wu- drops its w before m, p, k, or w-initial stems	Fermino 2000 pp.16,20,43,54
+R06	prefix-rule	8	dependent	1,2	n- k-	prefixes lose their vowel before /8/-initial stems (the /8/ is vowel-initial)	Fermino 2000 p.22
+R07	prefix-rule	8	dependent	3	(wu- deleted)	third-person wu- deleted entirely before /8/-initial stems (also -8kas 'mother')	Fermino 2000 p.22
+R08	prefix-rule	hC	*	3	wuh- | uh-	full third-person prefix wu- retained as wuh- before Mass /hC/ clusters (/hp/, /hk/, /hq/); attested variant spelling uh- (u-)	Goddard-1981 lines 61.52-54, 62.1-2, 63.34-37 (SS15/18, C 9, C 12)
+S01	suffix-rule	*	*	1p,12	-un	our (ex.)/our (inc.) possession/subject suffix	Fermino 2000 pp.17,19,20,23
+S02	suffix-rule	*	*	2p,3p	-uw	your (pl.)/their possession/subject suffix (NI)	Fermino 2000 pp.17,19,21
+S03	suffix-rule	*	NI	3	(no theme)	NI third-person: no possessive theme marker	Fermino 2000 pp.19,20,21,24
+S04	suffix-rule	*	NA	3,3p	-ah | -uw-ah	NA third-person animate possessor theme -ah; in third-person plural the theme surfaces -uw + -ah with the intervening -ôw- (wuneechanuwôwah, 8shuwôwah, wutahtuquwôwah, umuseesuwôwah)	Fermino 2000 pp.22,23,24
+T01	theme-rule	*	*	*	-m	possession theme -m class (dependent nouns never take -m; not all nouns take it)	Fermino 2000 p.24
+V01	verb-rule	*	AI	3,3'	(no prefix)	AI third-person singular and plural take no prefix (third person marked by suffix)	Fermino 2000 pp.30,32,41
+V02	verb-rule	*	TI,TA-objective	3	wu-	TI/TA objective third-person keeps the wu- prefix (drops its w before p-initial stems)	Fermino 2000 pp.41,42,54,58
+S05	suffix-rule	*	*	pl-object	-ash | -ak	plural-object markers: -ash (NI) / -ak (NA); the third-person plural object carries the intervening -ôw- before the marker (nuhkôtash, wuhkontash, n8shak)	Fermino 2000 pp.19,20,21,22,23,24
