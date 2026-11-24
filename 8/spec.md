@@ -22,17 +22,18 @@ Rendering (roadmap item 6); corpus-side registry changes.
 
 ## 3. Requirements
 
-- **R-1:** Works are declared in the registry only; the CLI enumerates targets from it.
-- **R-2:** The join consumes the corpus contract's alignment store and versification maps, keyed on verse_id.
-- **R-3:** Column sets resolve per edition without hardcoding.
+- **R-1:** Works SHALL be declared in the registry only; the CLI SHALL enumerate targets from it.
+- **R-2:** The join SHALL consume the corpus contract's alignment store and versification maps, keyed on verse_id.
+- **R-3:** Column sets SHALL resolve per edition without hardcoding.
+- **R-4:** An invalid column declaration SHALL fail with a named error — never silently dropped.
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | Adding a declared work changes output without code change (R-1) | structural | add a test work row; run; assert the new work renders |
-| SC-2 | Joined rows carry verse_id + all declared columns (R-2) | structural | inspect joined output on a known verse range |
-| SC-3 | Unknown column in a work declaration fails loudly (R-3) | structural | feed a bad declaration; assert a named error, not silent drop |
+| SC-1 | A declared work renders without code change | structural | add a test work row; run; assert rendering; assert no hardcoded works in the generator (R-1, R-3) |
+| SC-2 | Joined rows carry verse_id + declared columns | structural | inspect joined output on a known verse range (R-2) |
+| SC-3 | Invalid column declaration fails with a named error | structural | feed a bad declaration; assert the named error (R-4) |
 
 ## 5. Dependencies
 
@@ -40,11 +41,16 @@ Rendering (roadmap item 6); corpus-side registry changes.
 |-----------|--------------|--------|
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
-| Corpus works-registry pattern | model | corpus docs/research/data/eliot-tritext/works-registry.yaml | read, 2026-11-23 |
+| Corpus works-registry pattern | the declarative model this registry follows | satisfied |
 
 ## 6. Traceability
 
-Each requirement names the SCs verifying it (in §4's criterion wording); each SC names its R-x. No orphans in either direction.
+| Requirement | Success criteria |
+|-------------|------------------|
+| R-1 | SC-1 |
+| R-2 | SC-2 |
+| R-3 | SC-1 |
+| R-4 | SC-3 |
 
 ## 7. Documentation Sources
 

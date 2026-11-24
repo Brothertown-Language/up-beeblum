@@ -22,14 +22,14 @@ Any other ignore additions; upstream repos.
 
 ## 3. Requirements
 
-- **R-1:** .gitignore's effective set gains exactly __pycache__/ and *.pyc.
-- **R-2:** No other patterns change.
+- **R-1:** `.gitignore`'s effective set SHALL gain exactly `__pycache__/` and `*.pyc`.
+- **R-2:** No other patterns SHALL change (the exact-set equality holds: the prior nine + exactly these two).
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | Effective set = the prior nine + exactly the two debris patterns (R-1, R-2) | structural | parse .gitignore; set-equality against the expected eleven |
+| SC-1 | Effective set = prior nine + exactly the two debris patterns | structural | parse .gitignore; set-equality against the expected eleven (R-1, R-2) |
 
 ## 5. Dependencies
 
@@ -41,7 +41,10 @@ Any other ignore additions; upstream repos.
 
 ## 6. Traceability
 
-Each requirement names the SCs verifying it (in §4's criterion wording); each SC names its R-x. No orphans in either direction.
+| Requirement | Success criteria |
+|-------------|------------------|
+| R-1 | SC-1 |
+| R-2 | SC-1 |
 
 ## 7. Documentation Sources
 
@@ -57,8 +60,8 @@ Each instrument costs a read or run at implementation time (minutes); skipping r
 
 ## 9. Edge Cases
 
-- **Upstream data maturity** — the corpus surface this item consumes may be incomplete per book/edition; the coverage-driven model builds what exists and flags the rest, never fabricates; manifests record flags.
-- **Recomposition** — if validation or implementation shows the item over-fat for one PR, the recomposition protocol splits it; this spec becomes the umbrella (recorded at that time).
+- **Input boundary** — a future ignore-set change would collide with the exact-set discipline; SC-1's equality instrument is what catches it, and the change lands by spec, never by drift.
+- **Recomposition** — if validation or implementation shows the item over-fat, the recomposition protocol splits it and this spec becomes the umbrella (recorded at that time).
 
 ## 10. Completion gate
 

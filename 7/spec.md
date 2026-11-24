@@ -22,17 +22,17 @@ Stage-1 behavior; rendering; dictionary/lexicon data changes.
 
 ## 3. Requirements
 
-- **R-1:** The stage-2 map renders every legal IPA segment to exactly one WLRP letter/digraph.
-- **R-2:** Loan classes apply per the policy — names keep loans' letters; unassimilated loans retain and flag.
-- **R-3:** Stage-2 output is deterministic per input (no nondeterminism of any kind).
+- **R-1:** The stage-2 map SHALL render every legal IPA segment to exactly one WLRP letter/digraph.
+- **R-2:** Loan classes SHALL apply per policy — names keep loans' letters; unassimilated loans retain and flag.
+- **R-3:** Stage-2 output SHALL be deterministic per input — the same input renders the same output across runs.
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | The map covers the phoneme inventory with no gaps (R-1) | structural | cross-check map keys against the stage-1 phoneme set; zero missing |
-| SC-2 | Loan-class rows render per policy (R-2) | structural | test the policy paths on known loan forms from the derivation data |
-| SC-3 | Same input renders same output across runs (R-3) | structural | run twice; diff; zero differences |
+| SC-1 | Map covers the phoneme inventory, no gaps | structural | cross-check map keys vs the stage-1 phoneme set; zero missing (R-1) |
+| SC-2 | Loan-class rows render per policy | structural | test policy paths on known loan forms from the derivation data (R-2) |
+| SC-3 | Same input, same output across runs | structural | run twice; diff; zero differences (R-3) |
 
 ## 5. Dependencies
 
@@ -40,11 +40,15 @@ Stage-1 behavior; rendering; dictionary/lexicon data changes.
 |-----------|--------------|--------|
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
-| Stage-1 engine | upstream | up-beeblum item 3's ticket | pending |
+| Stage-1 engine | the IPA output this stage renders (its ticket) | pending |
 
 ## 6. Traceability
 
-Each requirement names the SCs verifying it (in §4's criterion wording); each SC names its R-x. No orphans in either direction.
+| Requirement | Success criteria |
+|-------------|------------------|
+| R-1 | SC-1 |
+| R-2 | SC-2 |
+| R-3 | SC-3 |
 
 ## 7. Documentation Sources
 

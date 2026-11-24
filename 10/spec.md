@@ -22,17 +22,17 @@ Derivation data content; rendering engine changes beyond mark rendering.
 
 ## 3. Requirements
 
-- **R-1:** Each delivered row renders its provenance mark per the declared vocabulary.
-- **R-2:** The derivation provenance table is emitted as part of the build's outputs.
-- **R-3:** A row lacking provenance metadata fails the build rather than rendering unmarked.
+- **R-1:** Each delivered row SHALL render its provenance mark per the declared vocabulary — all rows, not a sample.
+- **R-2:** The derivation provenance table (per-form IPA, verdict class, confidence) SHALL be emitted as part of the build's outputs.
+- **R-3:** A row lacking provenance metadata SHALL abort the build with a named error (the R-1 non-render consequence, stated as its own deliverable).
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | Marks render per vocabulary for all rows (R-1) | structural | sample outputs across flags; locate the marks |
-| SC-2 | The provenance table appears in build outputs (R-2) | structural | build; locate the emitted table |
-| SC-3 | Missing metadata aborts with a named error (R-3) | structural | strip a row's metadata; assert the named failure |
+| SC-1 | Every delivered row renders its mark per the vocabulary | structural | parse all delivered rows; each row's mark matches its carried metadata; zero unmarked rows (R-1) |
+| SC-2 | Provenance table appears in build outputs | structural | build; locate the emitted table (R-2) |
+| SC-3 | Missing metadata aborts with a named error | structural | strip a row's metadata; assert the named failure (R-3) |
 
 ## 5. Dependencies
 
@@ -40,11 +40,15 @@ Derivation data content; rendering engine changes beyond mark rendering.
 |-----------|--------------|--------|
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
-| Roadmap item 6's render pipeline | upstream | up-beeblum item 6's ticket | pending |
+| Roadmap item 6's render pipeline | the emitted surfaces this marks (its ticket) | pending |
 
 ## 6. Traceability
 
-Each requirement names the SCs verifying it (in §4's criterion wording); each SC names its R-x. No orphans in either direction.
+| Requirement | Success criteria |
+|-------------|------------------|
+| R-1 | SC-1 |
+| R-2 | SC-2 |
+| R-3 | SC-3 |
 
 ## 7. Documentation Sources
 

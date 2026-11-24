@@ -22,17 +22,17 @@ Apparatus/provenance marks (roadmap item 7); content editing.
 
 ## 3. Requirements
 
-- **R-1:** The emitter produces a PDF per declared work and Markdown per book/unit from registry targets.
-- **R-2:** Rendered text comes only from the joined rows — no generator-prose content in verse text.
-- **R-3:** Glyph coverage runs against the contract's inventories; uncovered glyphs fail loudly.
+- **R-1:** The emitter SHALL produce a PDF per declared work and Markdown per book/unit from registry targets.
+- **R-2:** Rendered verse text SHALL match the joined rows for every verse — the outputs and the rows agree completely.
+- **R-3:** Glyph coverage SHALL run against the contract's inventories; uncovered glyphs SHALL fail loudly with a named report.
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | Every declared build target emits its PDF + Markdown (R-1) | structural | run a full build; assert artifact set == target set |
-| SC-2 | Verse text in outputs matches the joined rows byte-for-byte (R-2) | structural | sample-extract verses from outputs; compare to rows |
-| SC-3 | Uncovered glyphs abort with a named glyph report (R-3) | structural | feed an uncovered glyph; assert named failure |
+| SC-1 | Every declared target emits its PDF + Markdown | structural | run full build; artifact set == target set (R-1) |
+| SC-2 | Verse text matches joined rows for every verse | structural | extract all verse strings from outputs; compare against the rows; zero differences (R-2) |
+| SC-3 | Uncovered glyph aborts with a named report | structural | feed an uncovered glyph; assert the named failure (R-3) |
 
 ## 5. Dependencies
 
@@ -40,11 +40,15 @@ Apparatus/provenance marks (roadmap item 7); content editing.
 |-----------|--------------|--------|
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
-| Roadmap item 5's join | upstream | up-beeblum item 5's ticket | pending |
+| Roadmap item 5's join | the joined rows this pipeline renders (its ticket) | pending |
 
 ## 6. Traceability
 
-Each requirement names the SCs verifying it (in §4's criterion wording); each SC names its R-x. No orphans in either direction.
+| Requirement | Success criteria |
+|-------------|------------------|
+| R-1 | SC-1 |
+| R-2 | SC-2 |
+| R-3 | SC-3 |
 
 ## 7. Documentation Sources
 

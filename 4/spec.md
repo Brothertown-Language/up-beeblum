@@ -22,17 +22,17 @@ Derivation stages and rendering (roadmap items 3-7); corpus-repo changes (correc
 
 ## 3. Requirements
 
-- **R-1:** The tool regenerates all supported copies deterministically per pin — the same pin yields byte-identical output.
-- **R-2:** Every generated copy carries a build manifest recording the corpus SHA and the input surface versions.
-- **R-3:** Per-row provenance flags (ok/uncertain/gap) are carried into the copies' metadata, never silently dropped.
+- **R-1:** The tool SHALL regenerate all supported copies deterministically per pin — the same pin SHALL yield byte-identical output.
+- **R-2:** Every generated copy SHALL carry a build manifest recording (corpus SHA, input surface versions, and the derivation-data version or `none` where the column carries no derivation state), matching the ROADMAP anchor's manifest fields.
+- **R-3:** Per-row provenance flags (ok/uncertain/gap) SHALL be carried into the copies' metadata — no row's flag is dropped silently.
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | Two runs at the same pin produce byte-identical outputs (R-1) | structural | run twice in temp dirs; diff outputs; zero differences |
-| SC-2 | Every copy's manifest matches the recorded pin + input surfaces (R-2) | structural | read manifests; compare against the pin record |
-| SC-3 | Flags populate for every data row of every copy (R-3) | structural | read a copy; assert flag columns non-empty for all rows |
+| SC-1 | Two runs at the same pin produce byte-identical outputs | structural | run twice in temp dirs; diff; zero differences (R-1) |
+| SC-2 | Manifests record corpus SHA + input surfaces + derivation-data state | structural | read manifests; compare against pin record + derivation-data version (R-2) |
+| SC-3 | Flags populate for every data row of every copy | structural | read copies; assert flag columns non-empty for all rows (R-3) |
 
 ## 5. Dependencies
 
@@ -40,11 +40,15 @@ Derivation stages and rendering (roadmap items 3-7); corpus-repo changes (correc
 |-----------|--------------|--------|
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
-| Corpus store (materialized at pin) | input | the .gitmodules-declared reference seam | pending |
+| Corpus store (materialized at pin) | the .gitmodules-declared reference seam at the recorded pin | pending |
 
 ## 6. Traceability
 
-Each requirement names the SCs verifying it (in §4's criterion wording); each SC names its R-x. No orphans in either direction.
+| Requirement | Success criteria |
+|-------------|------------------|
+| R-1 | SC-1 |
+| R-2 | SC-2 |
+| R-3 | SC-3 |
 
 ## 7. Documentation Sources
 

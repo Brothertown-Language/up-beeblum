@@ -22,17 +22,20 @@ The build pipeline's other stages; corpus content.
 
 ## 3. Requirements
 
-- **R-1:** The manifest enumerates every book/edition the corpus spine carries, with row + flag counts.
-- **R-2:** The build consumes the manifest; uncovered books appear as named gaps, never silently absent.
-- **R-3:** Manifest regeneration is part of the pin-bump flow.
+- **R-1:** The manifest SHALL enumerate every book/edition the corpus spine carries, with row + flag counts.
+- **R-2:** The build SHALL consume the manifest; uncovered books SHALL appear as named gaps, never silently absent.
+- **R-3:** Manifest regeneration SHALL be part of the pin-bump flow — running the pin-bump procedure SHALL regenerate the manifest.
+- **R-4:** An enumerated-unknown book (a manifest state the corpus spine does not carry) SHALL fail the enumeration loudly, per the item's stated design.
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | Manifest matches the corpus spine's actual rows (R-1) | structural | regenerate; compare per-book counts to the alignment store |
-| SC-2 | Build targets + gap notes follow the manifest (R-2) | structural | run the build; assert target set and gap notes agree with the manifest |
-| SC-3 | Stale manifest fails the build (R-3) | structural | flip a manifest count; assert the named staleness failure |
+| SC-1 | Manifest matches the spine's actual rows | structural | regenerate; compare per-book counts vs the alignment store (R-1) |
+| SC-2 | Build targets + gap notes follow the manifest | structural | run build; assert target set + gap notes agree with the manifest (R-2) |
+| SC-3 | Pin-bump regenerates the manifest | structural | run the pin-bump flow twice; assert the manifest's SHA field updates each time (R-3) |
+| SC-4 | Stale manifest fails the build | structural | flip a count in a staged manifest; assert the named staleness failure (R-3)|
+| SC-5 | Enumerated-unknown book fails loudly | structural | feed a manifest row naming an absent book; assert the named enumeration failure (R-4) |
 
 ## 5. Dependencies
 
@@ -40,11 +43,16 @@ The build pipeline's other stages; corpus content.
 |-----------|--------------|--------|
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
-| Roadmap item 1's regeneration tool | upstream | up-beeblum item 1's ticket | pending |
+| Roadmap item 1's regeneration tool | the pin-bump flow this integrates with | pending |
 
 ## 6. Traceability
 
-Each requirement names the SCs verifying it (in §4's criterion wording); each SC names its R-x. No orphans in either direction.
+| Requirement | Success criteria |
+|-------------|------------------|
+| R-1 | SC-1 |
+| R-2 | SC-2 |
+| R-3 | SC-3 |
+| R-4 | SC-4 |
 
 ## 7. Documentation Sources
 

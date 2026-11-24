@@ -22,17 +22,17 @@ The conversion engine itself (roadmap item 3); ML machinery; rendering.
 
 ## 3. Requirements
 
-- **R-1:** The component/allomorph data encodes Fermino's conditioning system + prefix paradigms in the Nisinoon-compatible schema.
-- **R-2:** The per-form map carries every one of the corpus lexicon's forms with a provenance class.
-- **R-3:** No form is silently assigned — unmapped forms carry the 'flagged' class.
+- **R-1:** The component/allomorph data SHALL encode Fermino's conditioning system + prefix paradigms such that the table's rules reproduce Fermino's attested example paradigm rows (nuhkôt/kuhkôt/wuhkôt per uhkôt; n8sh/k8sh/8shah per 8sh; nutapun per apun).
+- **R-2:** The per-form map SHALL carry every form of the corpus lexicon (66,863 match_keys) with a provenance class.
+- **R-3:** No form SHALL be silently assigned — unmapped forms SHALL carry the `flagged` class.
 
 ## 4. Success criteria
 
 | ID | Criterion | Class | Instrument |
 |------|-----------|-------|------------|
-| SC-1 | Allomorph table rows cite their Fermino/Goddard anchors (R-1) | structural | read the table; assert per-row anchor fields |
-| SC-2 | Map keys cover the corpus lexicon 1:1 (R-2) | structural | set-compare the lexicon's match_keys against the map's keys; zero missing |
-| SC-3 | Every map row carries exactly one provenance class (R-3) | structural | read the map; assert class membership on every row |
+| SC-1 | The table's rules reproduce Fermino's attested paradigm rows | structural | run the encoded conditioning rules over Fermino's example set (uhkôt/8sh/apun paradigms); outputs match the thesis forms (R-1) |
+| SC-2 | Map keys cover the corpus lexicon 1:1 (66,863) | structural | set-compare lexicon match_keys vs map keys; zero missing (R-2) |
+| SC-3 | Every map row carries exactly one provenance class | structural | read the map; assert class membership on every row (R-3) |
 
 ## 5. Dependencies
 
@@ -40,11 +40,15 @@ The conversion engine itself (roadmap item 3); ML machinery; rendering.
 |-----------|--------------|--------|
 | ROADMAP.md (up-beeblum#3) | this item's scope + anchors | satisfied |
 | up-beeblum#1 scaffold | the surfaces this item extends | satisfied |
-| Fermino 2000 + Hicks 2006 | derivation authority | snea-phonetics docs/research/reference-pdfs/ | satisfied |
+| Fermino 2000 + Hicks 2006 | the derivation authority the data encodes | satisfied |
 
 ## 6. Traceability
 
-Each requirement names the SCs verifying it (in §4's criterion wording); each SC names its R-x. No orphans in either direction.
+| Requirement | Success criteria |
+|-------------|------------------|
+| R-1 | SC-1 |
+| R-2 | SC-2 |
+| R-3 | SC-3 |
 
 ## 7. Documentation Sources
 
